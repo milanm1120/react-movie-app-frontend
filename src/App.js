@@ -1,15 +1,16 @@
 // import React, { useEffect } from 'react' ;
-import React, { Componenent } from 'react';
-import './App.css';
+import React, { Component } from 'react' ;
 
 // const url = 'http://localhost:3000/api/v1/'
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Movie App</h1>
-      <Row title = "TRENDING NOW"/>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className='MainContainer'>
+
+      </div>
+    )
+  }
 }
+
 export default App;
