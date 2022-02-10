@@ -6,5 +6,11 @@ export const SignUp = (credentials) => {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({user: {name, email, password}})
         }
-    }
+        fetch(url + 'registration', requestOptions)
+            .then(r => r.json())
+            .then(data => {
+                console.log("res data: ", data)
+            dispatch({type: 'SIGNUP_SUCCESS'})
+            })
+    } 
 }
