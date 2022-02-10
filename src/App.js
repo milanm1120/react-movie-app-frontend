@@ -7,6 +7,8 @@ import MovieResults from './components/MovieResults';
 // const url = 'http://localhost:3000/api/v1/'
 
 class App extends Component {
+
+
   render() {
     return (
       <div className='MainContainer'>
