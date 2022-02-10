@@ -5,7 +5,8 @@ export class SignUp extends Component {
     state = {
         email: '',
         password: '',
-        name: ''
+        name: '',
+        errorMessage: ''
     }
 
     handleChange = (event) => {
@@ -19,17 +20,11 @@ export class SignUp extends Component {
         const {email, password, name} = this.state;
         if(email.length === 0 || name.length === 0 || password.length === 0)
         {
-            alert("all fields are required!!")
+            this.setState({errorMessage: "all fields are required!!"})
         }
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({user: { email, password, name} })
-          };
-        fetch(url + 'registration', requestOptions)
-            .then(response => response.json())
-            .then(data => console.log("res data: ", data))
-            .catch(er=>console.log(er.message))
+        else {
+            this.props.signUp(this.state)
+        }
     } 
       
       signIn = () => {
@@ -47,12 +42,41 @@ export class SignUp extends Component {
       } 
 
   render() {
+    const {  errorMessage } = this.state;
+
+    const { loading, authError, auth, message} = this.props
+    if(auth) {
+      return <Redirect to='/SignIn'/>
+    }
+
+
     return (
       <div>
-          <form>
+          <form onSubmit={(event) => handleSubmit(event)}>
               <input type="email" placeHolder="Email" name="email" value={this.state.email} onChange={(event) => this.handleChange(event)} />
               <input type="password" placeHolder="Password" name="password" value={this.state.password} onChange={(event) => this.handleChange(event)}/>
               <input type="text" placeHolder="Name" name="name" value={this.state.name} onChange={(event) => this.handleChange(event)}/>
+              
+              <p
+                  style={{
+                    marginTop: "20px",
+                    color: "red",
+                    fontSize: "18px"
+                  }}
+                >
+                  {errorMessage}
+                </p>
+
+                <p
+                  style={{
+                    marginTop: "20px",
+                    color: "red",
+                    fontSize: "18px"
+                  }}
+                >
+                  {authError}
+                </p>
+              
               <input type="submit" /> 
           </form>
       </div>
@@ -60,4 +84,4 @@ export class SignUp extends Component {
   }
 }
 
-export default SignUp
+  export default SignUp
