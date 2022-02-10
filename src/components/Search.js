@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { API_KEY } from "../secrets";
 
 class Search extends Component {
   constructor(props) {
@@ -17,7 +18,12 @@ class Search extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    console.log("Movie :", this.state.search)
+    console.log("Movie :", this.state.search);
+    let url=`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${this.state.search}`;
+    fetch(url, {
+      method:'GET',
+    }).then(r => r.json())
+    .then(result => console.log(result));
   }
 
 
