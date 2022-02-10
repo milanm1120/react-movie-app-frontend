@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Search from './components/Search';
 import MovieResults from './components/MovieResults';
 
-// const url = 'http://localhost:3000/api/v1/'
+
 
 class App extends Component {
 

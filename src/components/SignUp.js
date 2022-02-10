@@ -28,7 +28,7 @@ export class SignUp extends Component {
     } 
       
       signIn = () => {
-      
+        const url = 'http://localhost:3000/api/v1/'
         const requestOptions = {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -52,7 +52,7 @@ export class SignUp extends Component {
 
     return (
       <div>
-          <form onSubmit={(event) => handleSubmit(event)}>
+          <form onSubmit={(event) => this.handleSubmit(event)}>
               <input type="email" placeHolder="Email" name="email" value={this.state.email} onChange={(event) => this.handleChange(event)} />
               <input type="password" placeHolder="Password" name="password" value={this.state.password} onChange={(event) => this.handleChange(event)}/>
               <input type="text" placeHolder="Name" name="name" value={this.state.name} onChange={(event) => this.handleChange(event)}/>

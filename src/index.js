@@ -7,6 +7,7 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux' //any component rapped in 'Provider' will have access to our redux store
 import rootReducer from './redux/reducers/rootReducer';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function saveToLocalStorage(state){
   try{
@@ -40,7 +41,9 @@ store.subscribe(() => saveToLocalStorage(store.getState()));
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </Provider>,
   document.getElementById('root')
 );
