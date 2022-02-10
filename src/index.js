@@ -3,12 +3,45 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux' //any component rapped in 'Provider' will have access to our redux store
+import rootReducer from './redux/reducers/rootReducer';
+
+function saveToLocalStorage(state){
+  try{
+    const serializedState = JSON.stringify(state);
+    localStorage.setItem('state', serializedState);
+  } catch(e){
+    console.log(e);
+  }
+}
+
+function loadFromLocalStorage(){
+  try{
+    const serializedState = localStorage.getItem('state');
+    if(serializedState === null) return undefined;
+    return JSON.parse(serializedState);
+  } catch(e){
+    console.log(e);
+    return undefined;
+  }
+}
+
+const persistedState = loadFromLocalStorage();
+
+const store = createStore(rootReducer, persistedState,
+  compose(
+    applyMiddleware(thunk)
+  ));
+
+store.subscribe(() => saveToLocalStorage(store.getState()));
+
 
 ReactDOM.render(
-    <App />,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById('root')
 );
 
