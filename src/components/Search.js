@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { API_KEY } from "../secrets";
+import { API_KEY } from "../secrets.js"
+
 
 class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: ''
+      search: '',
+      movieResult: [],
     }
   }
 
@@ -19,13 +21,16 @@ class Search extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     console.log("Movie :", this.state.search);
-    let url=`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${this.state.search}`;
-    fetch(url, {
-      method:'GET',
-    }).then(r => r.json())
-    .then(result => console.log(result));
+    this.componentDidMount()
   }
 
+  componentDidMount() {
+    let url=`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${this.state.search}`;
+    fetch(url)
+    .then(r => r.json())
+    .then(result => console.log(result))
+    // .then(({movie}) => this.setState({ movieResult: movie}))
+  }
 
   render() {
     return(
