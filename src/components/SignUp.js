@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import '../App.css'
 
-export class SignUp extends Component {
+class SignUp extends Component {
 
     state = {
         email: '',
@@ -45,40 +46,49 @@ export class SignUp extends Component {
     const {  errorMessage } = this.state;
 
     const { loading, authError, auth, message} = this.props
-    if(auth) {
-      return <Redirect to='/SignIn'/>
-    }
+    // if(auth) {
+    //   return <Redirect to='/SignIn'/>
+    // }
 
 
     return (
       <div>
-          <form onSubmit={(event) => this.handleSubmit(event)}>
-              <input type="email" placeHolder="Email" name="email" value={this.state.email} onChange={(event) => this.handleChange(event)} />
-              <input type="password" placeHolder="Password" name="password" value={this.state.password} onChange={(event) => this.handleChange(event)}/>
-              <input type="text" placeHolder="Name" name="name" value={this.state.name} onChange={(event) => this.handleChange(event)}/>
-              
-              <p
-                  style={{
-                    marginTop: "20px",
-                    color: "red",
-                    fontSize: "18px"
-                  }}
-                >
-                  {errorMessage}
-                </p>
+        <div className='signup-main-container'>
+          <div className='signup-container'>
+            <h3>SIGN UP</h3>
+            <hr />
+              <form onSubmit={(event) => this.handleSubmit(event)}>
+                  <label>Name: </label>
+                  <input type="text" placeHolder="Name" name="name" value={this.state.name} onChange={(event) => this.handleChange(event)}/><br/>
+                  <label>Email :</label>
+                  <input type="email" placeHolder="Email" name="email" value={this.state.email} onChange={(event) => this.handleChange(event)} /><br/>
+                  <label>Password: </label>
+                  <input type="password" placeHolder="Password" name="password" value={this.state.password} onChange={(event) => this.handleChange(event)}/><br/>
+                  
+                  <p
+                      style={{
+                        marginTop: "20px",
+                        color: "red",
+                        fontSize: "18px"
+                      }}
+                    >
+                      {errorMessage}
+                    </p>
 
-                <p
-                  style={{
-                    marginTop: "20px",
-                    color: "red",
-                    fontSize: "18px"
-                  }}
-                >
-                  {authError}
-                </p>
-              
-              <input type="submit" /> 
-          </form>
+                    <p
+                      style={{
+                        marginTop: "20px",
+                        color: "red",
+                        fontSize: "18px"
+                      }}
+                    >
+                      {authError}
+                    </p>
+                  
+                  <input type="submit" /> 
+              </form>
+          </div>
+        </div>
       </div>
     )
   }
