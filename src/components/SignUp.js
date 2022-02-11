@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import '../App.css'
+import { signUp } from '../redux/actions/authActions'
+import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 
 class SignUp extends Component {
 
@@ -46,9 +48,9 @@ class SignUp extends Component {
     const {  errorMessage } = this.state;
 
     const { loading, authError, auth, message} = this.props
-    // if(auth) {
-    //   return <Redirect to='/SignIn'/>
-    // }
+    if(auth) {
+      return <Redirect to='/SignIn'/>
+    }
 
 
     return (
@@ -93,5 +95,19 @@ class SignUp extends Component {
     )
   }
 }
+const mapStateToProps = (state) => {
 
-  export default SignUp
+  return{
+    authError: state.auth.error,
+    auth: state.auth.isAuthenticated,
+    message: state.auth.message
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return{
+    signUp: (user) => dispatch(signUp(user))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

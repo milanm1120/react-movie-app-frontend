@@ -36,10 +36,10 @@ class App extends Component {
         
         {/* <p>Don't have an account? <NavLink to='/signup'>Sign Up here!</NavLink></p> */}
 
-        {/* <Route exact path='/' component={LoginContainer} />
-        <Route exact path='/signup' component={SignUpContainer} /> */}
+        <Route exact path='/' component={LoginContainer} />
+        <Route exact path='/signup' component={SignUpContainer} />
 
-        <Home />
+        {/* <Home /> */}
       </div>
     )
   }
