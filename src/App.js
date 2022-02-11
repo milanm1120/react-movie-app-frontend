@@ -18,11 +18,11 @@ import Home from './components/Home';
 
 class App extends Component {
 
-  componentDidMount() {
-    fetch('http://localhost:3000/api/v1/')
-    .then(r => r.json())
-    .then(data => console.log(data))
-  }
+  // componentDidMount() {
+  //   fetch('http://localhost:3000/api/v1/')
+  //   .then(r => r.json())
+  //   .then(data => console.log(data))
+  // }
 
   render() {
     return (
@@ -39,7 +39,7 @@ class App extends Component {
         <Route exact path='/' component={LoginContainer} />
         <Route exact path='/signup' component={SignUpContainer} />
 
-        {/* <Home /> */}
+        <Home />
       </div>
     )
   }

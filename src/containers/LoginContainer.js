@@ -6,7 +6,7 @@ function LoginContainer() {
     return (
       <div>
           <Login />
-          <p>Don't have an account? <Link to='/signup'>Sign Up here!</Link></p>
+          <p>Don't have an account? <Link to='/signup'>Sign Up Here!</Link></p>
        
       </div>
     )

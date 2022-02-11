@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { signUp } from '../redux/actions/authActions'
 import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
+
 
 class SignUp extends Component {
 
@@ -61,11 +62,11 @@ class SignUp extends Component {
             <hr />
               <form onSubmit={(event) => this.handleSubmit(event)}>
                   <label>Name: </label>
-                  <input type="text" placeHolder="Name" name="name" value={this.state.name} onChange={(event) => this.handleChange(event)}/><br/>
+                  <input type="text" placeholder="Name" name="name" value={this.state.name} onChange={(event) => this.handleChange(event)}/><br/>
                   <label>Email :</label>
-                  <input type="email" placeHolder="Email" name="email" value={this.state.email} onChange={(event) => this.handleChange(event)} /><br/>
+                  <input type="email" placeholder="Email" name="email" value={this.state.email} onChange={(event) => this.handleChange(event)} /><br/>
                   <label>Password: </label>
-                  <input type="password" placeHolder="Password" name="password" value={this.state.password} onChange={(event) => this.handleChange(event)}/><br/>
+                  <input type="password" placeholder="Password" name="password" value={this.state.password} onChange={(event) => this.handleChange(event)}/><br/>
                   
                   <p
                       style={{
@@ -88,6 +89,7 @@ class SignUp extends Component {
                     </p>
                   
                   <input type="submit" /> 
+                  
               </form>
           </div>
         </div>

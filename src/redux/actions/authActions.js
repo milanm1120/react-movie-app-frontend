@@ -1,4 +1,6 @@
-export const SignUp = (credentials) => {
+export const signUp = (credentials) => {
+
+    const url = ('http://localhost:3000/api/v1/')
     const {name, email, password} = credentials     //destructuring name, email, password out of credentials
     return(dispatch)=>{
         const requestOptions = {
