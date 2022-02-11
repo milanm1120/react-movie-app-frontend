@@ -23,6 +23,7 @@ class MovieItems extends Component {
               <p><italic>{this.props.movie.overview}</italic></p>
               <p><strong>Release Date: </strong>{this.props.movie.release_date}</p>
               <p><strong>Ratings: </strong><span className='badge-badge-default'>{this.props.movie.vote_average}</span></p>
+              <button>Add To Favorite</button>
             </div>
         </div>  
       </div>

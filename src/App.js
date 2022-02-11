@@ -28,6 +28,7 @@ class App extends Component {
     return (
       
       <div className='AppContainer'>
+          <div className='text-center'>
          {/* <NavBar /> */}
             
         {/* <SignUp /> */}
@@ -40,6 +41,7 @@ class App extends Component {
         <Route exact path='/signup' component={SignUpContainer} />
 
         <Home />
+        </div>
       </div>
     )
   }

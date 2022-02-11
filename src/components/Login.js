@@ -33,7 +33,7 @@ class Login extends Component {
               <input type='email' name='email' className='login-field' placeholder='example@abc.com' value={this.state.email} onChange={(event) => this.handleChange(event)} required /><br/>
               <label>Password: </label>
               <input type='password' name='password' className='login-field' placeholder='password' value={this.state.password} onChange={(event) => this.handleChange(event)} required /><br/>
-              <input type='submit' value='login' id='login-btn' className='login-btn' />
+              <input type='submit' value='login' id='login-btn' className="btn btn-success" />
           </form>
       </div>
     )
