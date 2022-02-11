@@ -24,7 +24,7 @@ class Login extends Component {
           <hr />
           <form onSubmit={(event) => this.handleSubmit(event)} >
               <label>Email: </label>
-              <input type='email' name='email' placeholder='example@abc.com' value={this.state.email} onChange={(event) => this.handleChange(event)} />
+              <input type='email' name='email' placeholder='example@abc.com' value={this.state.email} onChange={(event) => this.handleChange(event)} /><br/>
               <label>Password: </label>
               <input type='password' name='password' value={this.state.password} onChange={(event) => this.handleChange(event)} required />
 

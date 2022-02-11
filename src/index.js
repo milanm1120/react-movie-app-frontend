@@ -8,6 +8,7 @@ import thunk from 'redux-thunk'
 import { Provider } from 'react-redux' //any component rapped in 'Provider' will have access to our redux store
 import rootReducer from './redux/reducers/rootReducer';
 import { BrowserRouter as Router, Route } from "react-router-dom";
+// import movieReducer from './redux/reducers/movieReducer';
 
 function saveToLocalStorage(state){
   try{
@@ -31,9 +32,9 @@ function loadFromLocalStorage(){
 
 const persistedState = loadFromLocalStorage();
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(rootReducer, composeEnchancer(applyMidleware(thunk)))
+const store = createStore(rootReducer, composeEnhancer(applyMiddleware(thunk)))     //store = global storage of data, reducers is responsible for taking in an 'action' object and deciding what we want to update in our store and then the reducer returns the new store
 
 store.subscribe(() => saveToLocalStorage(store.getState()));
 
