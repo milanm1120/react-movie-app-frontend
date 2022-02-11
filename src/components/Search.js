@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { API_KEY } from "../secrets.js"
+import { API_KEY } from "../secrets.js";
+import { movies } from  '../redux/actions/index.js';
+import { connect } from 'react-redux';
 
 
 class Search extends Component {
@@ -28,7 +30,8 @@ class Search extends Component {
     let url=`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${this.state.search}`;
     fetch(url)
     .then(r => r.json())
-    .then(result => console.log(result))
+    .then(result => {console.log(result);
+    });
     // .then(({movie}) => this.setState({ movieResult: movie}))
   }
 
@@ -45,4 +48,4 @@ class Search extends Component {
   }
 }
 
-export default Search;
+export default connect(null, { movies })(Search);

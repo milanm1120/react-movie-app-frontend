@@ -14,6 +14,7 @@ import NavBar from './components/NavBar';
 import UsersContainer from './containers/UsersContainer';
 import Routes from './components/Routes';
 import LoginContainer from './containers/LoginContainer';
+import Home from './components/Home';
 
 class App extends Component {
 
@@ -29,14 +30,16 @@ class App extends Component {
       <div className='AppContainer'>
          {/* <NavBar /> */}
             
-        {/* <SignUp />
-        <LoginContainer /> */}
-        {/* <Route path='/user/new' component={SignUp}/> */}
+        {/* <SignUp /> */}
+        {/* <LoginContainer /> */}
+        {/* <Route path='/user/new' component={SignUp}/>
         
         {/* <p>Don't have an account? <NavLink to='/signup'>Sign Up here!</NavLink></p> */}
 
-        <Route exact path='/' component={LoginContainer} />
-        <Route exact path='/signup' component={SignUpContainer} />
+        {/* <Route exact path='/' component={LoginContainer} />
+        <Route exact path='/signup' component={SignUpContainer} /> */}
+
+        <Home />
       </div>
     )
   }

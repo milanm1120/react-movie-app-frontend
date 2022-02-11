@@ -1,13 +1,13 @@
-import { MOVIES } from '../actions';
+import { movies } from  '../redux/actions/index.js';
 
 function movies(state= [], action){              //taking in the previous state and a defined action object
-    // switch(action.type){                                //inside the reducer we are updating the reduce based upon the action.
-        // case MOVIES:
-        //     console.log("MOvies are: ", action.type);
-        //     return action.type;
-        // default:
+    switch(action.type){                                //inside the reducer we are updating the reduce based upon the action.
+        case MOVIES:
+            console.log("Movies are: ", action.items);
+            return action.items;
+        default:
             return state;
-    // }
+    }
 }
 
 export default movies
