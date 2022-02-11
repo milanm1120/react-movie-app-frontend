@@ -16,7 +16,6 @@ class Login extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        /* incomplete */
         this.props.addUser(this.state)
     }
 
