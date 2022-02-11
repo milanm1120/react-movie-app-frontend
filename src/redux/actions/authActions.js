@@ -1,6 +1,6 @@
 export const SignUp = (credentials) => {
     const {name, email, password} = credentials     //destructuring name, email, password out of credentials
-    return(dispatch, getState)=>{
+    return(dispatch)=>{
         const requestOptions = {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
