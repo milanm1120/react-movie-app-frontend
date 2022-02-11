@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom'
 
 function SignUpContainer() {
     return (
-      <div>
-          <SignUp />
-          <p>Already have an Account, <Link to='/'>Sign In Here!</Link></p>
-      </div>
+        <div id='displaysignup'>
+            <div className= 'signup-container' id='signup-container'>
+                <SignUp />
+                <p>Already have an Account, <Link to='/'>Sign In Here!</Link></p>
+            </div>
+        </div>
     )
   }
 

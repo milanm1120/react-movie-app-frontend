@@ -1,13 +1,15 @@
 import React from 'react'
 import Login from '../components/Login'
 import { Link } from 'react-router-dom'
+import '../stylesheets/Login.css'
 
 function LoginContainer() {
     return (
-      <div>
-          <Login />
-          <p>Don't have an account? <Link to='/signup'>Sign Up Here!</Link></p>
-       
+      <div id='displaylogin'>
+          <div className= 'login-container' id='login-container'>
+            <Login />
+            <p>Don't have an account? <Link to='/signup'>Sign Up Here!</Link></p>
+          </div>
       </div>
     )
   }

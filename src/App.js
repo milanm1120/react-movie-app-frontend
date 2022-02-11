@@ -39,7 +39,7 @@ class App extends Component {
         <Route exact path='/' component={LoginContainer} />
         <Route exact path='/signup' component={SignUpContainer} />
 
-        <Home />
+        {/* <Home /> */}
       </div>
     )
   }
