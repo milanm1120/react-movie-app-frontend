@@ -10,12 +10,12 @@ export class Home extends Component {
   render() {
     return (
       <div>
-          <Router>
+          {/* <Router>
           <NavBar />
           <Route exact path ="/" component={Home} />
-          <Route exact path ="/signup" component={SignUp} />
+          <Route exact path ="/signup" component={SignUp} /> */}
           {/* <Route exact path ="/favorite" component={Favorite} /> */}
-        </Router>
+        {/* </Router> */}
           
           
           

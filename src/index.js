@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Home from './components/Home';
 import reportWebVitals from './reportWebVitals';
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux' //any component rapped in 'Provider' will have access to our redux store
 import rootReducer from './redux/reducers/rootReducer';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router} from "react-router-dom";
 // import movieReducer from './redux/reducers/movieReducer';
 
 function saveToLocalStorage(state){

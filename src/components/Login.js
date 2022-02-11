@@ -17,6 +17,10 @@ class Login extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
         this.props.addUser(this.state)
+        this.setState({                                     //resets the form 'cleared out' after submitted
+            email: '',
+            password: ''
+        })
     }
 
   render() {
