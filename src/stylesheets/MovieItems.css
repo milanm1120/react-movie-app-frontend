@@ -1,0 +1,16 @@
+.movie-items-container {
+    display: flex
+}
+
+#movie-items-poster{
+    float: left;
+    padding: 20px;
+}
+
+#movie-items-info{
+    float: left;
+}
+
+p {
+    font: bold;
+}
