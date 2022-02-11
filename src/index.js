@@ -31,16 +31,16 @@ function loadFromLocalStorage(){
 
 const persistedState = loadFromLocalStorage();
 
-const store = createStore(rootReducer, persistedState,
-  compose(
-    applyMiddleware(thunk)
-  ));
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = createStore(rootReducer, composeEnchancer(applyMidleware(thunk)))
 
 store.subscribe(() => saveToLocalStorage(store.getState()));
 
 
 ReactDOM.render(
-  <Provider store={store}>
+  //any child component wrapped inside of provider will have access to the Redux store
+  <Provider store={store}>   
     <Router>
       <App />
     </Router>
