@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { API_KEY } from "../secrets.js";
 import { movies } from  '../redux/actions/index.js';
 import { connect } from 'react-redux';
+import '../stylesheets/Search.css'
 
 
 class Search extends Component {
@@ -38,12 +39,14 @@ class Search extends Component {
 
   render() {
     return(
-        <div className = 'SearchComponent'>
+        <div id = 'displaysearch'>
+          <div className = 'search-container'>
             <form onSubmit={(event) => this.handleSubmit(event)}>
               {/* <label>Search: </label> */}
-              <input type="text" id="serachField" name="seachField" placeholder="Search for a movie" onChange={(event) =>this.handleChange(event)} />
-              <button id="submitButton">Submit</button>
+              <input type="text" id="search-field" className="seach-field" placeholder="Search for a movie" onChange={(event) =>this.handleChange(event)} />
+              <button id="submitButton" className='search-submit-btn'>Submit</button>
             </form>
+          </div>
         </div>
     )
   }
