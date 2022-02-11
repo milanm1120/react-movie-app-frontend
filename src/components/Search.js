@@ -23,14 +23,15 @@ class Search extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     console.log("Movie :", this.state.search);
-    this.componentDidMount()
+    this.search()
   }
 
-  componentDidMount() {
+  search() {
     let url=`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${this.state.search}`;
     fetch(url)
     .then(r => r.json())
-    .then(result => {console.log(result);
+    .then(jsonObj => {
+      this.props.movies(jsonObj.results);
     });
     // .then(({movie}) => this.setState({ movieResult: movie}))
   }
@@ -40,7 +41,7 @@ class Search extends Component {
         <div className = 'SearchComponent'>
             <form onSubmit={(event) => this.handleSubmit(event)}>
               {/* <label>Search: </label> */}
-              <input type="text" id="serachField" name="seachField" placeholder="Search for any movie" onChange={(event) =>this.handleChange(event)} />
+              <input type="text" id="serachField" name="seachField" placeholder="Search for a movie" onChange={(event) =>this.handleChange(event)} />
               <button id="submitButton">Submit</button>
             </form>
         </div>
