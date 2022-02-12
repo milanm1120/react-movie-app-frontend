@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 import { addUser } from '../redux/actions/addUser';
+import '../stylesheets/Login.css'
 
 class Login extends Component {
     state = {
@@ -27,13 +29,14 @@ class Login extends Component {
     return (
       <div className='login-container'>
           <h3>LOGIN</h3>
-          <hr />
+          <br/>
           <form onSubmit={(event) => this.handleSubmit(event)} >
               <label>Email: </label>
               <input type='email' name='email' className='login-field' placeholder='example@abc.com' value={this.state.email} onChange={(event) => this.handleChange(event)} required /><br/>
               <label>Password: </label>
-              <input type='password' name='password' className='login-field' placeholder='password' value={this.state.password} onChange={(event) => this.handleChange(event)} required /><br/>
+              <input type='password' name='password' className='login-field' placeholder='password' value={this.state.password} onChange={(event) => this.handleChange(event)} required /><br/><br/>
               <input type='submit' value='login' id='login-btn' className="btn btn-success" />
+              <p>Don't have an account? <Link to='/signup'>Sign Up Here!</Link></p>
           </form>
       </div>
     )

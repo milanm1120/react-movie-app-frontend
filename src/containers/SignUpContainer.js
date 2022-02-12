@@ -7,7 +7,7 @@ function SignUpContainer() {
         <div id='displaysignup'>
             <div className= 'signup-container' id='signup-container'>
                 <SignUp />
-                <p>Already have an Account, <Link to='/'>Sign In Here!</Link></p>
+                <p>Already have an account, <Link to='/'>Sign In Here!</Link></p>
             </div>
         </div>
     )

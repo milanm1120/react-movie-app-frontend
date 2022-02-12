@@ -1,5 +1,9 @@
+#displaymovieitems {
+    background-color: black;
+}
+
 .movie-items-container {
-    display: flex
+    display: flex;
 }
 
 #movie-items-poster{
@@ -11,6 +15,16 @@
     float: left;
 }
 
+h3 {
+    color: whitesmoke
+}
+
+
 p {
-    font: bold;
+    color: whitesmoke
+}
+
+hr {
+    background-color: red;
+    height: 1px;
 }

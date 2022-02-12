@@ -1,16 +1,21 @@
-#login-container {
+.login-container {
     flex: content;
     text-align: center;
-    top: 100%;
-    transform: translateY(+200%);
+    /* top: 100%;
+    transform: translateY(+200%); */
 }
 
-#login-field{
+/* .login-field{
     padding: 8px 50px;
     margin: 8px;
     font-size: 15px;
     text-align: center;
     box-sizing: border-box;
+} */
+
+.login-header{
+  background-image: url('../stylesheets/images/cinema.jpg');
+  background-size: 100% 100%;
 }
 
 /* 
@@ -34,3 +39,11 @@
   .login-btn:hover {
     background-color: #2c974b;
   } */
+
+  p {
+    color: whitesmoke
+  }
+
+  label {
+    color: whitesmoke
+  }

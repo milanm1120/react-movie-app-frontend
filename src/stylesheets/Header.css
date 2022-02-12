@@ -1,0 +1,16 @@
+.header-container {
+    width: 100%;
+    height: 500px;
+}
+
+.header-container {
+    background-color: black;
+    background-image: url('../stylesheets/images/cinema.jpg');
+    background-size: 100% 100%;
+}
+
+h1 {
+    color: whitesmoke;
+    text-align: center;
+    line-height: 400px;
+}
