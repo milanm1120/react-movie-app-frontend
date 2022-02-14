@@ -47,7 +47,7 @@ class MovieItems extends Component {
               <p>{this.props.movie.overview}</p>
               <p><strong>Release Date: </strong>{this.props.movie.release_date}</p>
               <p><strong>Ratings: </strong>{this.props.movie.vote_average}</p>
-              {/* <button onClick = {() => this.addToFavorite()}>Add To Favorite</button> */}
+              <button onClick = {() => this.addToFavorite()}>Add To Favorite</button>
             </div>
         </div>  
       </div>
