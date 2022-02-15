@@ -17,12 +17,12 @@ const initState = {
         }
   
         case 'LOGIN_SUCCESS':
-          console.log("Login Success: ", action.data.token)   //passing the token data to the action
+          console.log("Login Success: ", action.payload.token)   //passing the token data to the action
         return{ 
           ...state,
           authError: null,
           isAuthenticated: true,
-          token: action.data.token     //storing the token value to the key token
+          token: action.payload.token     //storing the token value to the key token
         }
   
       case 'LOGIN_ERROR':

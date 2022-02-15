@@ -40,11 +40,13 @@ class App extends Component {
         {/* <Route path='/user/new' component={SignUp}/>
         
         {/* <p>Don't have an account? <NavLink to='/signup'>Sign Up here!</NavLink></p> */}
-        <Header />
+        <Header /> */
         <Route exact path='/' component={LoginContainer} />
         <Route exact path='/signup' component={SignUpContainer} />
+        <Route exact path='/home' component={Home} />
 
-        {/* <Home /> */}
+
+         {/* <Home /> */}
         </div>
       </div>
     )

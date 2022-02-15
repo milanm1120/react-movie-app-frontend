@@ -19,13 +19,16 @@ class Login extends Component {
     }
 
     handleSubmit = (event) => {
-        event.preventDefault()
+        event.preventDefault();
+        const history = useHistory();
         this.props.loginUser(this.state)
         // this.setState({                                     //resets the form 'cleared out' after submitted
         //     email: '',
         //     password: ''
         // }
         // )
+        console.log(this.state)
+        history.push("/home");
     }
 
   render() {

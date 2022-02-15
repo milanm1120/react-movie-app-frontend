@@ -18,14 +18,12 @@ export class Home extends Component {
                     <Route exact path ="/signup" component={SignUp} /> */}
                     {/* <Route exact path ="/favorite" component={Favorite} /> */}
                     {/* </Router> */}
+    
             
             
-            
-            
-            
-                    <div className = 'HeaderContainer'>
+                    {/* <div className = 'HeaderContainer'>
                         <Header />
-                    </div>
+                    </div> */}
                     <div className= 'SearchContainer'>
                         <Search />
                     </div>
