@@ -12,7 +12,7 @@ export const loginUser = (credentials) => {
             .then(r => r.json())
             .then(data => {
                 console.log("res data: ", data)
-                dispatch({type: 'LOGIN_SUCCESS'})
+                dispatch({type: 'LOGIN_SUCCESS', data: data})
                 })
             .catch(error => {
                 console.log(error.message)
