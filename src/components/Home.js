@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {connect } from 'react-redux'
 import Header from './Header';
 import Search from './Search';
 import MovieResults from './MovieResults';
@@ -8,22 +9,12 @@ import SignUp from './SignUp';
 import '../stylesheets/Home.css'
 
 export class Home extends Component {
-  render() {
+    render() {
+      console.log(this.props)
+      console.log(this.state)
     return (
             <div id ='displayhome'>
                 <div className = 'home-container'>
-                    {/* <Router>
-                    <NavBar />
-                    <Route exact path ="/" component={Home} />
-                    <Route exact path ="/signup" component={SignUp} /> */}
-                    {/* <Route exact path ="/favorite" component={Favorite} /> */}
-                    {/* </Router> */}
-    
-            
-            
-                    {/* <div className = 'HeaderContainer'>
-                        <Header />
-                    </div> */}
                     <div className= 'SearchContainer'>
                         <Search />
                     </div>
@@ -36,4 +27,11 @@ export class Home extends Component {
     }
 }
 
-export default Home
+function mapStateToProps(state) {
+    console.log(state);
+    return{
+        auth:state.auth,
+    }
+}
+
+export default connect(mapStateToProps, null)(Home);

@@ -44,7 +44,7 @@ class MovieItems extends Component {
             </div >
             <div id='movie-items-info' className='movie-items-info'>
               <h3>{this.props.movie.title}</h3>
-              <p>{this.props.movie.overview}</p>
+              <p>{this.props.movie.description}</p>
               <p><strong>Release Date: </strong>{this.props.movie.release_date}</p>
               <p><strong>Ratings: </strong>{this.props.movie.vote_average}</p>
               <button onClick = {() => this.addToFavorite()}>Add To Favorite</button>

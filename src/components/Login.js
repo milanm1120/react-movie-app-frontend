@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
+import { Redirect } from 'react-router';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { addUser } from '../redux/actions/addUser';
 import { loginUser } from '../redux/actions/loginUser';
@@ -18,18 +19,18 @@ class Login extends Component {
         })
     }
 
+
     handleSubmit = (event) => {
-        event.preventDefault();
-        const history = useHistory();
-        this.props.loginUser(this.state)
+        event.preventDefault() 
+        { this.props.loginUser(this.state) }
         // this.setState({                                     //resets the form 'cleared out' after submitted
-        //     email: '',
-        //     password: ''
+        //      email: '',
+        //      password: ''
         // }
         // )
-        console.log(this.state)
-        history.push("/home");
-    }
+        console.log(this.state);
+        <Redirect to="/home" />
+    } 
 
   render() {
     return (
@@ -48,5 +49,7 @@ class Login extends Component {
     )
   }
 }
+
+
 
 export default connect(null, {loginUser})(Login)          //we don't need to know whats in our store, we are only adding to our store. So we use 'null' instead of mapStateToProps. The second function is our ./redux/action/addUser
