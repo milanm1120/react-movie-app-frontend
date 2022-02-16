@@ -6,7 +6,6 @@ import '../stylesheets/MovieItems.css'
 
 class MovieItemDetail extends Component {
 
-
   componentDidMount() {
     fetch(`http://localhost:3000/api/v1/movies/${this.props.match.params.id}`)
     .then(r => r.json())
@@ -25,7 +24,6 @@ class MovieItemDetail extends Component {
     return (
       <div id = 'displaymovieitems'>
               
-              
               {movie ?  
                     <div className='movie-items-container'>
                       <div id= 'movie-items-poster' className= 'movie-items-poster'>
@@ -41,13 +39,14 @@ class MovieItemDetail extends Component {
                         <p>{movie.description}</p>
                         <p><strong>Release Date: </strong>{movie.release_date}</p>
                         <p><strong>Ratings: </strong>{movie.online_rating}</p>
-                    </div>
-                    <div>
-                      <Comment />
-                    </div>
+                    </div> 
                   </div> 
                  </div>
-                 : '' }      
+                 
+                 : '' } 
+                 <div>
+                 <Comment />
+               </div>     
         </div>  
     )
   }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { API_KEY } from "../secrets.js";
 import { movies } from  '../redux/actions/index.js';
 import { connect } from 'react-redux';
-import '../stylesheets/Search.css'
+import '../stylesheets/Comment.css'
 
 
 class Comment extends Component {
