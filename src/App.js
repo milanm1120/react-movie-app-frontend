@@ -17,6 +17,7 @@ import LoginContainer from './containers/LoginContainer';
 import Home from './components/Home';
 import Header from './components/Header';
 import './stylesheets/App.css'
+import StarRating from './components/StarRating';
  
 
 class App extends Component {
@@ -30,7 +31,7 @@ class App extends Component {
   render() {
     return (
       
-      <div className='display-app' id='display-app' style={{blackgroundColor: 'black'}}>
+      <div className='display-app' id='display-app'>
           <div className='text-center'>
           < style>{'body { background-color: black; }'}</style>
          {/* <NavBar /> */}
@@ -40,12 +41,12 @@ class App extends Component {
         {/* <Route path='/user/new' component={SignUp}/>
         
         {/* <p>Don't have an account? <NavLink to='/signup'>Sign Up here!</NavLink></p> */}
-        <Header /> */
+        <Header />
         <Route exact path='/' component={LoginContainer} />
         <Route exact path='/signup' component={SignUpContainer} />
         <Route exact path='/home' component={Home} />
 
-
+        {/* <StarRating /> */}
          {/* <Home /> */}
         </div>
       </div>

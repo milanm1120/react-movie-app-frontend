@@ -29,7 +29,7 @@ class Search extends Component {
 
   search() {
     // let url=`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${this.state.search}`;
-    let url = 'http://localhost:3000/api/v1/movies'
+    let url = `http://localhost:3000/api/v1/movies?query=${this.state.search}`
     fetch(url)
     .then(r => r.json())
     .then(jsonObj => {
