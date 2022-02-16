@@ -37,7 +37,7 @@ class MovieItems extends Component {
               {/* <br/> */}
               
               <img
-                  src={imageUrlComponent + this.props.movie.poster_path}
+                  src={this.props.movie.poster_path}
                   alt={this.props.movie.title + " Image"}
                   height='150px' width='100px%'
               />
@@ -46,7 +46,7 @@ class MovieItems extends Component {
               <h3>{this.props.movie.title}</h3>
               <p>{this.props.movie.description}</p>
               <p><strong>Release Date: </strong>{this.props.movie.release_date}</p>
-              <p><strong>Ratings: </strong>{this.props.movie.vote_average}</p>
+              <p><strong>Ratings: </strong>{this.props.movie.online_rating}</p>
               <button onClick = {() => this.addToFavorite()}>Add To Favorite</button>
             </div>
         </div>  

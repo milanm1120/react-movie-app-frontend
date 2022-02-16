@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import Home from './components/Home';
 import reportWebVitals from './reportWebVitals';
-import { createStore, applyMiddleware, compose } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'   //needed to create Redux store
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux' //any component rapped in 'Provider' will have access to our redux store
 import rootReducer from './redux/reducers/rootReducer';
