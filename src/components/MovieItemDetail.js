@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { addToFavorite } from '../redux/actions';
 import { connect } from 'react-redux'
-// import '../stylesheets/MovieItems.css'
+import Comment from './Comment';
+import '../stylesheets/MovieItems.css'
 
 class MovieItemDetail extends Component {
 
@@ -26,30 +27,27 @@ class MovieItemDetail extends Component {
               
               
               {movie ?  
-                
-       
                     <div className='movie-items-container'>
-        
                       <div id= 'movie-items-poster' className= 'movie-items-poster'>
-                    {/* <div> */}
+                    <div>
                         <img
-                        src={`http://localhost:3001/${movie.poster_path}`}
+                        src={`/${movie.poster_path}`}
                         alt={movie.title + " Image"}
                         height='150px' width='100px%'
                         />
-                    {/* </div> */}
+                    </div>
                     <div id='movie-items-info' className='movie-items-info'>
                         <h3>{movie.title}</h3>
                         <p>{movie.description}</p>
                         <p><strong>Release Date: </strong>{movie.release_date}</p>
                         <p><strong>Ratings: </strong>{movie.online_rating}</p>
                     </div>
-                 </div> 
+                    <div>
+                      <Comment />
+                    </div>
+                  </div> 
                  </div>
-                
-                 : '' } 
-                
-              
+                 : '' }      
         </div>  
     )
   }
@@ -63,5 +61,3 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, null)(MovieItemDetail);
-
-// export default connect(null, {addToFavorite})(MovieItems);
