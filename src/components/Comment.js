@@ -1,28 +1,19 @@
-import React, { Component } from 'react';
-import StarRating from './StarRating';
+import React, { Component } from 'react'
 
-class Comment extends Component {
-    state = {
-        rating: '',
-        comment: '',
-    }
-
-    handleComment = (event) => {
-        this.setState({
-            comment: event.target.value,
-        });
-    };
-
+export class Comment extends Component {
     render() {
+        const { commentLine } = this.props;
         return (
-            <div>
-                <CommentBox
-                    comment={this.state.comment}
-                    onComment = {this.handleComment}
-                />
-            </div>
-        )
-    }
+         <ul className='comments-list'>
+         {commentLine.map((val) => {
+             return 
+                <li className='each-comment'  
+                    key={val.commentId}>{val.text}
+                </li>
+           })
+          }
+         </ul>
+       )};
 }
 
-export default Comment;
+export default Comment
