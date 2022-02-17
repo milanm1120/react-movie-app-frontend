@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { API_KEY } from "../secrets.js";
 import { movies } from  '../redux/actions/index.js';
 import { connect } from 'react-redux';
+import { AllComments } from './AllComments'
 import '../stylesheets/Comment.css'
 
 
@@ -54,16 +55,23 @@ class Comment extends Component {
 //     // .then(({movie}) => this.setState({ movieResult: movie}))
 //   }
 
+
   render() {
+    console.log(this.props.commentAll)
     return(
         <div id = 'displaycomment'>
           <div className = 'comment-container'>
+            
             <form onSubmit={(event) => this.handleSubmit(event)}>
-              {/* <label>Comment: </label> */}
+              
+            
+
+
               <input type="text" id="comment-field" className="seach-field" placeholder="Leave A Comment..." onChange={(event) =>this.handleChange(event)} />
               <button id="submitButton" className='comment-submit-btn'>Add Comment</button>
             </form>
           </div>
+           <AllComments commentAll={this.props.commentAll} />
         </div>
     )
   }
