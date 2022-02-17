@@ -34,26 +34,15 @@ class Comment extends Component {
         },
         body: JSON.stringify({
             'contents': this.state.comment, 
-            'user_id': 1,
-            'movie_id': 7
+            'user_id': localStorage.getItem("react_user_id"),
+            'movie_id': this.props.movieID
             }),
         method: 'POST',})
     .then(r => r.json())
     .then(data => 
       console.log(data))
-    
+      window.location.reload(false);
   }
-
-//   search() {
-//     // let url=`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${this.state.search}`;
-//     let url = `http://localhost:3000/api/v1/movies?query=${this.state.search}`
-//     fetch(url)
-//     .then(r => r.json())
-//     .then(jsonObj => {
-//       this.props.movies(jsonObj);
-//     });
-//     // .then(({movie}) => this.setState({ movieResult: movie}))
-//   }
 
 
   render() {

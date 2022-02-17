@@ -23,13 +23,12 @@ class Login extends Component {
     handleSubmit = (event) => {
         event.preventDefault() 
         { this.props.loginUser(this.state) }
-        // this.setState({                                     //resets the form 'cleared out' after submitted
-        //      email: '',
-        //      password: ''
-        // }
-        // )
+        this.setState({                                     //resets the form 'cleared out' after submitted
+             email: '',
+             password: ''
+        }
+        )
         console.log(this.state);
-        <Redirect to="/home" />
     } 
 
   render() {
@@ -43,7 +42,7 @@ class Login extends Component {
               <label>Password: </label>
               <input type='password' name='password' className='login-field' placeholder='password' value={this.state.password} onChange={(event) => this.handleChange(event)} required /><br/><br/>
               <input type='submit' value='login' id='login-btn' className="btn btn-success" />
-              <p>Don't have an account? <Link to='/signup'>Sign Up Here!</Link></p>
+              {/* <p>Don't have an account? <Link to='/signup'>Sign Up Here!</Link></p> */}
           </form>
       </div>
     )

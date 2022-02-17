@@ -40,7 +40,7 @@ class MovieItemDetail extends Component {
                         <p><strong>Release Date: </strong>{movie.release_date}</p>
                         <p><strong>Ratings: </strong>{movie.online_rating}</p>
                     </div> 
-                    <Comment commentAll={movie.comments}/>
+                    <Comment commentAll={movie.comments} movieID={movie.id}/>
                   </div> 
                  </div>
                  

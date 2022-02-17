@@ -5,11 +5,7 @@ import { Link } from 'react-router-dom'
 import '../stylesheets/Login.css'
 
 function LoginContainer() {
-      const [token, setToken] =useState();
-
-      if(!token) {
-        return <Login setToken={setToken} />
-      }
+      
 
     return (
       <div id='displaylogin'>

@@ -12,7 +12,7 @@ import Login from './components/Login';
 import SignUpContainer from './containers/SignUpContainer';
 import NavBar from './components/NavBar';
 import UsersContainer from './containers/UsersContainer';
-import Routes from './components/Routes';
+// import Routes from './components/Routes';
 import LoginContainer from './containers/LoginContainer';
 import Home from './components/Home';
 import Header from './components/Header';
@@ -44,7 +44,7 @@ class App extends Component {
         
         {/* <p>Don't have an account? <NavLink to='/signup'>Sign Up here!</NavLink></p> */}
         <Header />
-        <Route exact path='/' component={LoginContainer} />
+        <Route exact path='/' component={Home} />
         <Route exact path='/signup' component={SignUpContainer} />
         <Route exact path='/home' component={Home} />
         <Route exact path='/movie/:id/view' component={MovieItemDetail} />

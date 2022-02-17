@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {connect } from 'react-redux'
 import Header from './Header';
 import Search from './Search';
+import Login from './Login';
 import MovieResults from './MovieResults';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavBar from './NavBar';
@@ -12,8 +13,14 @@ export class Home extends Component {
     render() {
       console.log(this.props)
       console.log(this.state)
+      console.log(localStorage.getItem("react_token"))
+      const react_token = localStorage.getItem("react_token")       //token is stored as a constant
     return (
-            <div id ='displayhome'>
+         <div id ='displayhome'>
+                { !react_token ? <Login /> :  
+
+
+            
                 <div className = 'home-container'>
                     <div className= 'SearchContainer'>
                         <Search />
@@ -22,7 +29,9 @@ export class Home extends Component {
                         <MovieResults />
                     </div>
                 </div>
+                }
             </div>
+                
         )
     }
 }

@@ -7,8 +7,9 @@ export class AllComments extends Component {
             
         { this.props.commentAll ? this.props.commentAll.map(item =>{
                   // console.log(item)
-                  return <p>{item.contents}</p>;
-                  <h1>abcdedfg</h1>
+                  return <li key= {item.id}>
+                      {item.contents}
+                      {item.created_at} </li>
             }) : ''} 
             </div>
     )
