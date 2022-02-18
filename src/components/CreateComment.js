@@ -3,6 +3,7 @@ import { API_KEY } from "../secrets.js";
 import { movies } from  '../redux/actions/index.js';
 import { connect } from 'react-redux';
 import { ShowAllComments } from './ShowAllComments'
+import {Link } from 'react-router-dom'
 import '../stylesheets/Comment.css'
 
 
@@ -58,6 +59,8 @@ class CreateComment extends Component {
 
               <textarea id="comment-field" className="comment-field" rows="5" cols='50' placeholder="Enter Your Review Here..." onChange={(event) =>this.handleChange(event)} /><br/>
               <button id="submitButton" className='comment-submit-btn'>Add Review</button>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <Link to = {'/home'} ><button className='comment-submit-btn'>Back To Movie List</button></Link>
             </form>
           </div>
            <ShowAllComments commentAll={this.props.commentAll} />

@@ -57,13 +57,15 @@ class MovieItems extends Component {
                 />
               </div >
             <div id='movie-items-info' className='movie-items-info'>
-            <Link to = {`/movie/${this.props.movie.id}/view`} ><h3>{this.props.movie.title}</h3></Link>
+            {/* <Link to = {`/movie/${this.props.movie.id}/view`} > */}
+              <h3>{this.props.movie.title}</h3>
+              {/* </Link> */}
               <p>{this.props.movie.description}</p>
               <p><strong>Release Date: </strong>{this.props.movie.release_date}</p>
               <p><strong>Online Ratings: </strong>{this.props.movie.online_rating}</p>
-              <button onClick = {() => this.addToFavorite(this.props.movie.id)}>Add To Favorite</button>
+              <button className='option-submit-btn' onClick = {() => this.addToFavorite(this.props.movie.id)}>Add To Favorite</button>
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <Link to = {`/movie/${this.props.movie.id}/view`} ><button>Leave A Review</button></Link>
+              <Link to = {`/movie/${this.props.movie.id}/view`} ><button className='option-submit-btn'>Leave A Review</button></Link>
             </div> 
           </div>  
         

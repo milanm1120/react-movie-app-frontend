@@ -20,6 +20,7 @@ import './stylesheets/App.css'
 import StarRating from './components/StarRating';
 import MovieItemDetail from './components/MovieItemDetail';
 import CreateComment from './components/CreateComment';
+import FavoritesContainer from './containers/FavoritesContainer';
  
 
 class App extends Component {
@@ -44,11 +45,13 @@ class App extends Component {
         
         {/* <p>Don't have an account? <NavLink to='/signup'>Sign Up here!</NavLink></p> */}
         <Header />
-        <Route exact path='/' component={Home} />
+        <Route exact path='/' component={Login} />
+        <Route exact path='/login' component={Login} />
         <Route exact path='/signup' component={SignUpContainer} />
         <Route exact path='/home' component={Home} />
         <Route exact path='/movie/:id/view' component={MovieItemDetail} />
         <Route exact path='/movie/:id/comment' component={CreateComment} />
+        <Route exact path='/favorites' component={FavoritesContainer} />
 
         {/* <StarRating /> */}
          {/* <Home /> */}

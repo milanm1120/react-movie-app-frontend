@@ -23,17 +23,28 @@ class Login extends Component {
     handleSubmit = (event) => {
         event.preventDefault() 
         { this.props.loginUser(this.state) }
+        const react_token = localStorage.getItem("react_token")
+        console.log(react_token)
+        let loginError = react_token == 'undefined' ? true : false
         this.setState({                                     //resets the form 'cleared out' after submitted
-             email: '',
-             password: ''
+             loginError: loginError
         }
         )
         console.log(this.state);
     } 
 
   render() {
+    const react_token = localStorage.getItem("react_token")
+    console.log(this.state.authError)
+    console.log(this.state.loginError)
+    console.log('react_token')
     return (
       <div className='login-container'>
+          { react_token && react_token != 'undefined' ? <Redirect to="/home" /> :  
+          <div>
+              {this.state.loginError ? 
+              <h1 style={{color: "red"}}>Invalid Credentials</h1> : ''
+                }
           <h3>LOGIN</h3>
           <br/>
           <form onSubmit={(event) => this.handleSubmit(event)} >
@@ -42,9 +53,12 @@ class Login extends Component {
               <label>Password: </label>
               <input type='password' name='password' className='login-field' placeholder='password' value={this.state.password} onChange={(event) => this.handleChange(event)} required /><br/><br/>
               <input type='submit' value='login' id='login-btn' className="btn btn-success" />
-              {/* <p>Don't have an account? <Link to='/signup'>Sign Up Here!</Link></p> */}
+              <p>Don't have an account? <Link to='/signup'>Sign Up Here!</Link></p>
           </form>
+            </div>
+            }     
       </div>
+          
     )
   }
 }

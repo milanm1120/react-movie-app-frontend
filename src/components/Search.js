@@ -29,7 +29,7 @@ class Search extends Component {
 
   search() {
     // let url=`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${this.state.search}`;
-    let url = `http://localhost:3000/api/v1/movies?query=${this.state.search}`
+    let url = `http://localhost:3000/api/v1/movies?query=${this.state.search}&user_id=${localStorage.getItem('react_user_id')}`
     fetch(url)
     .then(r => r.json())
     .then(jsonObj => {
@@ -45,7 +45,8 @@ class Search extends Component {
             <form onSubmit={(event) => this.handleSubmit(event)}>
               {/* <label>Search: </label> */}
               <input type="text" id="search-field" className="seach-field" placeholder="Search for a movie" onChange={(event) =>this.handleChange(event)} />
-              <button id="submitButton" className='search-submit-btn'>Submit</button>
+              <button id="submitButton" className='search-submit-btn'>Submit</button><br/>
+              <p>Press Submit To See All Available Movies In Our DataBase</p>
             </form>
           </div>
         </div>

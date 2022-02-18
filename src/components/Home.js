@@ -17,7 +17,7 @@ export class Home extends Component {
       const react_token = localStorage.getItem("react_token")       //token is stored as a constant
     return (
          <div id ='displayhome'>
-                { !react_token ? <Login /> :  
+                { !react_token || react_token == 'undefined'? <Login /> :  
 
 
             

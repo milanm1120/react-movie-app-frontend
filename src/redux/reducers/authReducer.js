@@ -21,6 +21,7 @@ const initState = {
           localStorage.setItem('react_token', JSON.stringify(action.payload.token));    //storing the token in local storage
           localStorage.setItem('react_user_id', JSON.stringify(action.payload.user.id));
           localStorage.setItem('react_user_name', JSON.stringify(action.payload.user.name));
+          window.location.reload(false);
         return{ 
           ...state,
           authError: null,
@@ -29,8 +30,10 @@ const initState = {
         }
   
       case 'LOGIN_ERROR':
+        console.log('login fail')
         return{
           ...state,
+          authentication: false,
           authError: action.err
         }
   

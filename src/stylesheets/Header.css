@@ -15,7 +15,7 @@
 h1 {
     color: whitesmoke;
     text-align: center;
-    line-height: 300px;
+    /* line-height: 300px; */
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    transform: translate(-0%, -25%);
+    transform: translate(-0%, -0%);
 }

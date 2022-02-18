@@ -16,7 +16,7 @@ export const loginUser = (credentials) => {
                 dispatch({type: 'LOGIN_SUCCESS', payload: data})
                 })
             .catch(error => {
-                console.log(error.message)
+                // console.log(error.message)
                 dispatch({type: 'LOGIN_ERROR', err: error.message})
             })
     } 
