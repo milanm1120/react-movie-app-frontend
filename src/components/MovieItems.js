@@ -16,10 +16,23 @@ class MovieItems extends Component {
         };
     }
 
-  // addToFavorite(){
-  //   this.setState({favorite: !this.state.favorite})
-  //     this.props.addToFavorite(this.props.movie)
-  // }
+  addToFavorite(movieID){
+    // this.setState({favorite: !this.state.favorite})
+    //   this.props.addToFavorite(this.props.movie)
+    fetch(`http://localhost:3000/api/v1/favorites`, {
+        headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+            'user_id': localStorage.getItem("react_user_id"),
+            'movie_id': movieID
+            }),
+        method: 'POST',})
+    .then(r => r.json())
+    .then(data => 
+      console.log(data))
+  }
 
   // handleClick = (event) => {
   //   this.setState({
@@ -47,8 +60,8 @@ class MovieItems extends Component {
             <Link to = {`/movie/${this.props.movie.id}/view`} ><h3>{this.props.movie.title}</h3></Link>
               <p>{this.props.movie.description}</p>
               <p><strong>Release Date: </strong>{this.props.movie.release_date}</p>
-              <p><strong>Ratings: </strong>{this.props.movie.online_rating}</p>
-              <button onClick = {() => this.addToFavorite()}>Add To Favorite</button>
+              <p><strong>Online Ratings: </strong>{this.props.movie.online_rating}</p>
+              <button onClick = {() => this.addToFavorite(this.props.movie.id)}>Add To Favorite</button>
             </div> 
           </div>  
         

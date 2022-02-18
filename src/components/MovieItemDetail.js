@@ -27,19 +27,20 @@ class MovieItemDetail extends Component {
               {movie ?  
                     <div className='movie-items-container'>
                       <div id= 'movie-items-poster' className= 'movie-items-poster'>
-                    <div>
+                    
                         <img
                         src={`/${movie.poster_path}`}
                         alt={movie.title + " Image"}
                         height='150px' width='100px%'
                         />
+                    
                     </div>
                     <div id='movie-items-info' className='movie-items-info'>
                         <h3>{movie.title}</h3>
                         <p>{movie.description}</p>
                         <p><strong>Release Date: </strong>{movie.release_date}</p>
-                        <p><strong>Ratings: </strong>{movie.online_rating}</p>
-                    </div> 
+                        <p><strong>Online Ratings: </strong>{movie.online_rating}</p>
+                    
                     <Comment commentAll={movie.comments} movieID={movie.id}/>
                   </div> 
                  </div>

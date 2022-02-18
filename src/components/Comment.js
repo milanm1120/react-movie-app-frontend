@@ -56,7 +56,7 @@ class Comment extends Component {
             
 
 
-              <input type="text" id="comment-field" className="seach-field" placeholder="Leave A Comment..." onChange={(event) =>this.handleChange(event)} />
+              <textarea id="comment-field" className="comment-field" rows="5" cols='50' placeholder="Leave A Comment..." onChange={(event) =>this.handleChange(event)} /><br/>
               <button id="submitButton" className='comment-submit-btn'>Add Comment</button>
             </form>
           </div>
