@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { API_KEY } from "../secrets.js";
 import { movies } from  '../redux/actions/index.js';
 import { connect } from 'react-redux';
-import { AllComments } from './AllComments'
+import { ShowAllComments } from './ShowAllComments'
 import '../stylesheets/Comment.css'
 
 
-class Comment extends Component {
+class CreateComment extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -56,14 +56,14 @@ class Comment extends Component {
             
 
 
-              <textarea id="comment-field" className="comment-field" rows="5" cols='50' placeholder="Leave A Comment..." onChange={(event) =>this.handleChange(event)} /><br/>
-              <button id="submitButton" className='comment-submit-btn'>Add Comment</button>
+              <textarea id="comment-field" className="comment-field" rows="5" cols='50' placeholder="Enter Your Review Here..." onChange={(event) =>this.handleChange(event)} /><br/>
+              <button id="submitButton" className='comment-submit-btn'>Add Review</button>
             </form>
           </div>
-           <AllComments commentAll={this.props.commentAll} />
+           <ShowAllComments commentAll={this.props.commentAll} />
         </div>
     )
   }
 }
 
-export default connect(null, { movies })(Comment);
+export default connect(null, { movies })(CreateComment);

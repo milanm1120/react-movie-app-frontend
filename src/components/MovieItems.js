@@ -62,6 +62,8 @@ class MovieItems extends Component {
               <p><strong>Release Date: </strong>{this.props.movie.release_date}</p>
               <p><strong>Online Ratings: </strong>{this.props.movie.online_rating}</p>
               <button onClick = {() => this.addToFavorite(this.props.movie.id)}>Add To Favorite</button>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <Link to = {`/movie/${this.props.movie.id}/view`} ><button>Leave A Review</button></Link>
             </div> 
           </div>  
         

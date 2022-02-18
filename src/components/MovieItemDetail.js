@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { addToFavorite } from '../redux/actions';
 import { connect } from 'react-redux'
-import Comment from './Comment';
+import CreateComment from './CreateComment';
 import '../stylesheets/MovieItems.css'
 
 class MovieItemDetail extends Component {
@@ -41,7 +41,7 @@ class MovieItemDetail extends Component {
                         <p><strong>Release Date: </strong>{movie.release_date}</p>
                         <p><strong>Online Ratings: </strong>{movie.online_rating}</p>
                     
-                    <Comment commentAll={movie.comments} movieID={movie.id}/>
+                    <CreateComment commentAll={movie.comments} movieID={movie.id}/>
                   </div> 
                  </div>
                  

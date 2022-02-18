@@ -19,7 +19,7 @@ import Header from './components/Header';
 import './stylesheets/App.css'
 import StarRating from './components/StarRating';
 import MovieItemDetail from './components/MovieItemDetail';
-import Comment from './components/Comment';
+import CreateComment from './components/CreateComment';
  
 
 class App extends Component {
@@ -48,7 +48,7 @@ class App extends Component {
         <Route exact path='/signup' component={SignUpContainer} />
         <Route exact path='/home' component={Home} />
         <Route exact path='/movie/:id/view' component={MovieItemDetail} />
-        <Route exact path='/movie/:id/comment' component={Comment} />
+        <Route exact path='/movie/:id/comment' component={CreateComment} />
 
         {/* <StarRating /> */}
          {/* <Home /> */}
