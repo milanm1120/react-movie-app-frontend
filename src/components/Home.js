@@ -11,9 +11,6 @@ import '../stylesheets/Home.css'
 
 export class Home extends Component {
     render() {
-      console.log(this.props)
-      console.log(this.state)
-      console.log(localStorage.getItem("react_token"))
       const react_token = localStorage.getItem("react_token")       //token is stored as a constant
     return (
          <div id ='displayhome'>
@@ -36,11 +33,13 @@ export class Home extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    console.log(state);
-    return{
-        auth:state.auth,
-    }
-}
+// function mapStateToProps(state) {
+//     console.log(state);
+//     return{
+//         auth:state.auth,
+//     }
+// }
 
-export default connect(mapStateToProps, null)(Home);
+// export default connect(mapStateToProps, null)(Home);
+
+export default Home;

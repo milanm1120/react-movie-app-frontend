@@ -16,9 +16,6 @@ class MovieItemDetail extends Component {
   }
 
   render() {
-    // console.log(this.props);
-    // console.log(this.props.match.params.id);
-    // console.log(this.state);
     let movie= this.state ? this.state.movieitemdata : null
     console.log(movie);
     return (
