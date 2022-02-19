@@ -36,7 +36,8 @@ class SignUp extends Component {
         const url = 'http://localhost:3000/api/v1/'
         const requestOptions = {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json',
+         },
           body: JSON.stringify({ email: 'milan@gmail.com', password:'abc123!'})
         };
         fetch(url + 'sessions', requestOptions)

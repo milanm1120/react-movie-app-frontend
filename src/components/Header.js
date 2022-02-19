@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NavBar from './NavBar';
+import LogoutNavBar from './LogoutNavBar';
 import '../stylesheets/Header.css'
 
 
@@ -20,10 +20,11 @@ class Header extends Component {
     
         <div className = 'displayheader'>
           
-              <NavBar />
-              { react_token && react_token != 'undefined' ?   
+              <LogoutNavBar />
+              <br/>
+              {/* { react_token && react_token != 'undefined' ?   
                 <button className='logout' onClick={this.handleLogout}>LOGOUT</button>
-                : ''}
+                : ''} */}
             <div className= 'header-container'>
               <h1>Welcome To Everyone's A Critic</h1>
             </div>

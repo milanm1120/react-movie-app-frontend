@@ -17,11 +17,11 @@ class Search extends Component {
   handleChange = (event) => {
     console.log()
     this.setState({
-      search: event.target.value
+      search: event.target.value                    //event.target.value will setState to the value entered into the serach form
     })
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = (event) => {                       //fetch is tied to the handleSubmit, so the info from the API will trigger when the user does a search. 
     event.preventDefault()
     console.log("Movie :", this.state.search);
     this.search()
@@ -33,7 +33,9 @@ class Search extends Component {
     fetch(url)
     .then(r => r.json())
     .then(jsonObj => {
+      console.log(jsonObj)
       this.props.movies(jsonObj);
+  
     });
     // .then(({movie}) => this.setState({ movieResult: movie}))
   }
@@ -45,8 +47,8 @@ class Search extends Component {
             <form onSubmit={(event) => this.handleSubmit(event)}>
               {/* <label>Search: </label> */}
               <input type="text" id="search-field" className="seach-field" placeholder="Search for a movie" onChange={(event) =>this.handleChange(event)} />
-              <button id="submitButton" className='search-submit-btn'>Submit</button><br/>
-              <p>Press Submit To See All Available Movies In Our DataBase</p>
+              <button id="submitButton" className='search-submit-btn'>Search</button><br/>
+              <p>Click Search To See All Available Movies In Our DataBase</p>
             </form>
           </div>
         </div>

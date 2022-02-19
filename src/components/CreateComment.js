@@ -21,7 +21,7 @@ class CreateComment extends Component {
   handleChange = (event) => {
     console.log()
     this.setState({
-      comment: event.target.value
+      comment: event.target.value                 //event.target.value will setState to the value entered into the comment form
     })
   }
 
@@ -33,16 +33,16 @@ class CreateComment extends Component {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
         },
-        body: JSON.stringify({
+        body: JSON.stringify({                    //passing the entire state within the body
             'contents': this.state.comment, 
             'user_id': localStorage.getItem("react_user_id"),
             'movie_id': this.props.movieID
             }),
-        method: 'POST',})
+        method: 'POST',})                         //setting the server to recieve a 'POST' request
     .then(r => r.json())
     .then(data => 
       console.log(data))
-      window.location.reload(false);
+      window.location.reload(false);              //reloads the page using the version of the page cached by the browser
   }
 
 

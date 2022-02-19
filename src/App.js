@@ -10,7 +10,7 @@ import Favorite from './components/Favorite'
 // import UsersContainer from './containers/UsersContainers'; 
 import Login from './components/Login';
 import SignUpContainer from './containers/SignUpContainer';
-import NavBar from './components/NavBar';
+import LogoutNavBar from './components/LogoutNavBar';
 import UsersContainer from './containers/UsersContainer';
 // import Routes from './components/Routes';
 import LoginContainer from './containers/LoginContainer';
@@ -37,7 +37,7 @@ class App extends Component {
       <div className='display-app' id='display-app'>
           <div className='text-center'>
           < style>{'body { background-color: black; }'}</style>
-         {/* <NavBar /> */}
+         {/* <LogoutNavBar /> */}
             
         {/* <SignUp /> */}
         {/* <LoginContainer /> */}

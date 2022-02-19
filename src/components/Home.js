@@ -5,7 +5,7 @@ import Search from './Search';
 import Login from './Login';
 import MovieResults from './MovieResults';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import NavBar from './NavBar';
+import LogoutNavBar from './LogoutNavBar';
 import SignUp from './SignUp';
 import '../stylesheets/Home.css'
 

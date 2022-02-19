@@ -19,3 +19,40 @@ h1 {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     transform: translate(-0%, -0%);
 }
+
+.logout-btn {
+    float: right;
+    transform: translate(-70%, 0%);
+}
+
+.logout-btn {
+    background-color: red;
+    border: 1px solid rgba(27, 31, 35, .15);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 6px 16px;
+    position: relative;
+    text-align: center;
+  }
+  
+  .logout-btn:hover {
+    background-color: maroon;
+  }
+
+  .userName {
+      float: right;
+      position: right;
+      transform: translate(-70%, 40%);
+      color: white;
+      font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+      font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+  }
