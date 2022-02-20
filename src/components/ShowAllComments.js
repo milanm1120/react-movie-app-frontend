@@ -21,7 +21,7 @@ export class ShowAllComments extends Component {
   .then(data => 
     console.log(data))
     this.setState({
-      commentAll: this.state.commentAll.filter(item => item.id != commentID)
+      commentAll: this.state.commentAll.filter(item => item.id !== commentID)
     })
   }
 

@@ -6,7 +6,7 @@ const LogoutNavBar = () => {
     console.log('header test logout')
     localStorage.removeItem("react_token");
     window.location.reload(false);
-    }
+  }
 
     
       const react_token = localStorage.getItem("react_token")
@@ -17,10 +17,9 @@ const LogoutNavBar = () => {
         <nav>
             <br/>
             <div className ='userName'>
-                {/* User: {react_user_name} */}
             </div>
             { react_token && react_token != 'undefined' ?   
-                <button className='logout-btn' onClick={handleLogout}>LOGOUT </button>
+                <button className='logout-btn' onClick={handleLogout}>LOGOUT {react_user_name}</button>
                 : ''}
         </nav>
       </div>

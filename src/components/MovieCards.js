@@ -11,8 +11,6 @@ class MovieCards extends Component {
   addToFavorite(movieID, is_fav){                                 // can we send the Favorite and Comment buttons to a seperate container?
     console.log(is_fav)
     if (!is_fav){
-      // this.setState({favorite: !this.state.favorite})
-          //   this.props.addToFavorite(this.props.movie)
           fetch(`http://localhost:3000/api/v1/favorites`, {
               headers: {
               'Content-Type': 'application/json',
@@ -48,20 +46,13 @@ class MovieCards extends Component {
   .then(data => 
     console.log(data))
     this.setState({
-      fav_ids: this.state.fav_ids.filter(item => item != movieID)
+      fav_ids: this.state.fav_ids.filter(item => item != movieID)           //removing the unfavorited movieID. 
     })
   }
-
-  // handleClick = (event) => {
-  //   this.setState({
-  //     favorite: addToFavorite
-  //   })
-  // }
 
 
   render() {
     const {id, title, description, release_date, online_rating, poster_path} = this.props.movie               //descructuring of movie properties
-    // console.log(this.props);
     const fav_string = this.state.fav_ids.includes(this.props.movie.id) ? 'Remove Favorite' : 'Add To Favorite'
     const is_fav = this.state.fav_ids.includes(this.props.movie.id) ? true : false
     const btn_class_name = this.state.fav_ids.includes(this.props.movie.id) ? 'option-submit-btn' : 'option-green-btn'
@@ -72,7 +63,7 @@ class MovieCards extends Component {
         
           <div className='movie-items-container'>
             <div id= 'movie-items-poster' className= 'movie-items-poster'> 
-              {/* <br/> */}
+             
                 <img
                     src={poster_path}
                     alt={title + " Image"}
@@ -80,9 +71,8 @@ class MovieCards extends Component {
                 />
               </div >
             <div id='movie-items-info' className='movie-items-info'>
-            {/* <Link to = {`/movie/${id}/view`} > */}
+            
               <h3>{title}</h3>
-              {/* </Link> */}
               <p>{description}</p>
               <p><strong>Release Date: </strong>{release_date}</p>
               <p><strong>Online Ratings: </strong>{online_rating}</p>
@@ -98,5 +88,3 @@ class MovieCards extends Component {
 }
 
 export default MovieCards;
-
-// export default connect(null, {addToFavorite})(MovieItems);

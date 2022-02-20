@@ -41,6 +41,8 @@ class CreateComment extends Component {
         window.location.reload(false);              //reloads the page using the version of the page cached by the browser
     }
 
+    
+
     render() {
       console.log(this.props.commentAll)
       return(

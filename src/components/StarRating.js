@@ -7,9 +7,9 @@ import '../stylesheets/StarRating.css'
 
 class StarRating extends Component {
 
-    state = {
-      userRating: 0
-    }
+  state = {
+    
+  }
 
  ratingChanged = (newRating) => {
     console.log(newRating);
@@ -45,12 +45,14 @@ class StarRating extends Component {
 
 
   render () {
-    console.log(this.state)
+    let userRating = this.state.userRating
+    console.log(this.state.userRating)
+    console.log(typeof(this.state.userRating))
         return(
             <div className='starRating' id='starRating'>
                   <ReactStars
-                    count={5}
-                    value={this.state.userRating}
+                    count= {5}
+                    value= {userRating ? userRating : 0}
                     onChange={(event) => this.ratingChanged(event)}
                     size={25}
                     activeColor="#ffd700"

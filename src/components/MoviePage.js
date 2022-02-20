@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import CreateComment from './CreateComment';
+import Login from './Login';
 import '../stylesheets/MovieItems.css'
 
 class MoviePage extends Component {
@@ -14,11 +15,16 @@ class MoviePage extends Component {
     }))
   }
 
+
+
   render() {
+    const react_token = localStorage.getItem("react_token") 
     let movie= this.state ? this.state.movieitemdata : null
-    console.log(movie);
+    // console.log(movie);
     return (
       <div id = 'displaymovieitems'>
+              { !react_token || react_token == 'undefined'? <Login /> :  
+              <div>
               {movie ?  
                     <div className='movie-items-container'>
                       <div id= 'movie-items-poster' className= 'movie-items-poster'>
@@ -34,7 +40,7 @@ class MoviePage extends Component {
                         <h3>{movie.title}</h3>
                         <p>{movie.description}</p>
                         <p><strong>Release Date: </strong>{movie.release_date}</p>
-                        <p><strong>Online Ratings: </strong>{movie.online_rating}</p>
+                        <p><strong>Online Ratings: </strong>{movie.online_rating}/10 on TMDB.org</p>
                     
                     <CreateComment commentAll={movie.comments} movieID={movie.id}/>
                   </div> 
@@ -43,14 +49,18 @@ class MoviePage extends Component {
                  : '' } 
                  <div>
                 
-               </div>     
+               </div>  
+               </div>
+                } 
         </div>  
+              
     )
   }
+
 }
 
 function mapStateToProps(state) {
-  console.log(state);
+  // console.log(state);
   return{
     movieitemdata: state.movieitemdata,
   }
