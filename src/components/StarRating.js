@@ -7,12 +7,9 @@ import '../stylesheets/StarRating.css'
 
 class StarRating extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
+    state = {
       userRating: 0
     }
-  }
 
  ratingChanged = (newRating) => {
     console.log(newRating);

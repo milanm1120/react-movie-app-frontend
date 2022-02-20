@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import Favorite from '../components/Favorite'
+import Favorite_Review_Buttons from '../components/Favorite_Review_Buttons'
 
 export class FavoritesContainer extends Component {
   render() {
     return (
       <div>
-          <Favorite />
+          <Favorite_Review_Buttons />
       </div>
     )
   }

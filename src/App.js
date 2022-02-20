@@ -5,7 +5,7 @@ import React, { Component } from 'react' ;
 // import MovieResults from './components/MovieResults';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import SignUp from './components/SignUp';
-import Favorite from './components/Favorite'
+import Favorite_Review_Buttons from './components/Favorite_Review_Buttons'
 // import { connect } from 'react-redux'
 // import UsersContainer from './containers/UsersContainers'; 
 import Login from './components/Login';

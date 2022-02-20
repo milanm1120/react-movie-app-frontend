@@ -3,12 +3,9 @@ import '../stylesheets/ShowAllComments.css'
 
 export class ShowAllComments extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
+    state = {
       commentAll: this.props.commentAll
     }
-  }
 
   removeComment(commentID) {
     fetch(`http://localhost:3000/api/v1/comments/${commentID}`, {

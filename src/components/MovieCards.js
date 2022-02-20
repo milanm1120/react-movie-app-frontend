@@ -2,18 +2,13 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import '../stylesheets/MovieItems.css'
 
-const imageUrlComponent = 'https://image.tmdb.org/t/p/w342';
-
 class MovieCards extends Component {
 
-    constructor(props) {
-      super(props);
-        this.state = {
+    state = {
           fav_ids: this.props.fav_ids,
         };
-    }
 
-  addToFavorite(movieID, is_fav){
+  addToFavorite(movieID, is_fav){                                 // can we send the Favorite and Comment buttons to a seperate container?
     console.log(is_fav)
     if (!is_fav){
       // this.setState({favorite: !this.state.favorite})
@@ -65,6 +60,7 @@ class MovieCards extends Component {
 
 
   render() {
+    const {id, title, description, release_date, online_rating, poster_path} = this.props.movie               //descructuring of movie properties
     // console.log(this.props);
     const fav_string = this.state.fav_ids.includes(this.props.movie.id) ? 'Remove Favorite' : 'Add To Favorite'
     const is_fav = this.state.fav_ids.includes(this.props.movie.id) ? true : false
@@ -78,21 +74,21 @@ class MovieCards extends Component {
             <div id= 'movie-items-poster' className= 'movie-items-poster'> 
               {/* <br/> */}
                 <img
-                    src={this.props.movie.poster_path}
-                    alt={this.props.movie.title + " Image"}
+                    src={poster_path}
+                    alt={title + " Image"}
                     height='150px' width='100px%'
                 />
               </div >
             <div id='movie-items-info' className='movie-items-info'>
-            {/* <Link to = {`/movie/${this.props.movie.id}/view`} > */}
-              <h3>{this.props.movie.title}</h3>
+            {/* <Link to = {`/movie/${id}/view`} > */}
+              <h3>{title}</h3>
               {/* </Link> */}
-              <p>{this.props.movie.description}</p>
-              <p><strong>Release Date: </strong>{this.props.movie.release_date}</p>
-              <p><strong>Online Ratings: </strong>{this.props.movie.online_rating}</p>
-              <button className={btn_class_name}  onClick = {() => this.addToFavorite(this.props.movie.id, is_fav)}>{fav_string}</button>
+              <p>{description}</p>
+              <p><strong>Release Date: </strong>{release_date}</p>
+              <p><strong>Online Ratings: </strong>{online_rating}</p>
+              <button className={btn_class_name}  onClick = {() => this.addToFavorite(id, is_fav)}>{fav_string}</button>
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <Link to = {`/movie/${this.props.movie.id}/view`} ><button className='option-submit-btn'>Leave A Review</button></Link>
+              <Link to = {`/movie/${id}/view`} ><button className='option-submit-btn'>Leave A Review</button></Link>
             </div> 
           </div>  
         

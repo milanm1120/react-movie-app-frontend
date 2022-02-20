@@ -9,13 +9,10 @@ import '../stylesheets/Comment.css'
 
 class CreateComment extends Component {
   
-    constructor(props) {
-      super(props);
-      this.state = {
+    state = {
         comment: '',
         commentResult: [],
       }
-    }
 
     handleChange = (event) => {
       console.log()

@@ -6,13 +6,11 @@ import '../stylesheets/Search.css'
 
 
 class Search extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+  
+  state = {
       search: '',
       movieResult: [],
     }
-  }
 
   handleChange = (event) => {
     console.log()

@@ -1,7 +1,7 @@
 import LogoutNavBar from "../components/LogoutNavBar";
 import Header from "../components/Header";
 import Search from "../components/Search";
-import MovieResults from "../components/MovieResults";
+import MovieResults from "../components/MovieContainer";
 
 function LoginContainer() {
       

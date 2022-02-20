@@ -1,4 +1,3 @@
-import React, { Component } from 'react'
 import Search from './Search';
 import Login from './Login';
 import MovieContainer from './MovieContainer';
