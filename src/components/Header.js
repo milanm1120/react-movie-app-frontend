@@ -2,7 +2,7 @@ import LogoutNavBar from './LogoutNavBar';
 import '../stylesheets/Header.css'
 
 
-function Header() {
+const Header = () => {
     const react_token = localStorage.getItem("react_token")
     console.log(react_token)
           

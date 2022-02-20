@@ -1,6 +1,6 @@
 import '../stylesheets/Header.css'
 
-function LogoutNavBar() {
+const LogoutNavBar = () => {
 
   const handleLogout = () => {
     console.log('header test logout')
@@ -11,7 +11,7 @@ function LogoutNavBar() {
     
       const react_token = localStorage.getItem("react_token")
       const react_user_name = localStorage.getItem("react_user_name")
-      
+
     return (
       <div className='LogoutNavBar'>
         <nav>

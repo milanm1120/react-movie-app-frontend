@@ -4,7 +4,7 @@ import Login from './Login';
 import MovieResults from './MovieResults';
 import '../stylesheets/Home.css';
 
-function Home(){
+const Home = () => {
     
     const react_token = localStorage.getItem("react_token")       //token is stored as a constant
 
