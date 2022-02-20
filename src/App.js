@@ -3,7 +3,7 @@ import React, { Component } from 'react' ;
 // import Header from './components/Header';
 // import Search from './components/Search';
 // import MovieResults from './components/MovieResults';
-import { Route, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import SignUp from './components/SignUp';
 import Favorite from './components/Favorite'
 // import { connect } from 'react-redux'
@@ -17,7 +17,7 @@ import LoginContainer from './containers/LoginContainer';
 import Home from './components/Home';
 import Header from './components/Header';
 import './stylesheets/App.css'
-import StarRating from './components/StarRating';
+import StarRating from './components/OldStarRating';
 import MovieItemDetail from './components/MovieItemDetail';
 import CreateComment from './components/CreateComment';
 import FavoritesContainer from './containers/FavoritesContainer';
@@ -44,14 +44,16 @@ class App extends Component {
         {/* <Route path='/user/new' component={SignUp}/>
         
         {/* <p>Don't have an account? <NavLink to='/signup'>Sign Up here!</NavLink></p> */}
-        <Header />
-        <Route exact path='/' component={Login} />
-        <Route exact path='/login' component={Login} />
-        <Route exact path='/signup' component={SignUpContainer} />
-        <Route exact path='/home' component={Home} />
-        <Route exact path='/movie/:id/view' component={MovieItemDetail} />
-        <Route exact path='/movie/:id/comment' component={CreateComment} />
-        <Route exact path='/favorites' component={FavoritesContainer} />
+        <Router>
+          <Header />
+          <Route exact path='/' component={Login} />
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/signup' component={SignUpContainer} />
+          <Route exact path='/home' component={Home} />
+          <Route exact path='/movie/:id/view' component={MovieItemDetail} />
+          <Route exact path='/movie/:id/comment' component={CreateComment} />
+          <Route exact path='/favorites' component={FavoritesContainer} />
+        </Router>
 
         {/* <StarRating /> */}
          {/* <Home /> */}

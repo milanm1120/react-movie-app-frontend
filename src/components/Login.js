@@ -45,6 +45,7 @@ class Login extends Component {
               {this.state.loginError ? 
               <h1 style={{color: "red"}}>Invalid Credentials</h1> : ''
                 }
+                <br/>
           <h3>LOGIN</h3>
           <br/>
           <form onSubmit={(event) => this.handleSubmit(event)} >

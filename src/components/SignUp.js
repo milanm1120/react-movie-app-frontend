@@ -93,6 +93,7 @@ class SignUp extends Component {
                   
               </form>
           </div>
+          <p>Already have an account, <Link to='/'>Sign In Here!</Link></p>
         </div>
       </div>
     )

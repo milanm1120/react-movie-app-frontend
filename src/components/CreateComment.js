@@ -59,7 +59,7 @@ class CreateComment extends Component {
 
 
               <textarea id="comment-field" className="comment-field" rows="5" cols='50' placeholder="Enter Your Review Here..." onChange={(event) =>this.handleChange(event)} /><br/>
-              <StarRating /><br/>
+              <StarRating movieID={this.props.movieID} /><br/>
               <button id="submitButton" className='comment-submit-btn'>Add Review</button>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <Link to = {'/home'} ><button className='comment-submit-btn'>Back To Movie List</button></Link>

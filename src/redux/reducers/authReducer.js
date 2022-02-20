@@ -5,11 +5,11 @@ const initState = {
     message: null
   }
   
-  const authReducer = (state = initState, action) =>{
+  const authReducer = (state = initState, action) => {
     switch(action.type){
       case 'LOGOUT':
         return{
-          ...state,
+          ...state,               //copying the current state 'immutably' by copying the existing state and updating the copy
           authError: null,
           isAuthenticated: false,
           user: {},

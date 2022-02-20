@@ -22,7 +22,7 @@ class LogoutNavBar extends Component {
             <NavLink to='/Favorite'>FAVORTIES</NavLink> */}
             <br/>
             <div className ='userName'>
-                User: {react_user_name}
+                {/* User: {react_user_name} */}
             </div>
             { react_token && react_token != 'undefined' ?   
                 <button className='logout-btn' onClick={this.handleLogout}>LOGOUT </button>
