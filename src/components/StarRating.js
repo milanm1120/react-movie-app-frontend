@@ -3,6 +3,7 @@ import { FaStar } from 'react-icons/fa'
 // import '../stylesheets/StarRating.css'
 import ReactStars from "react-rating-stars-component";
 import { render } from "react-dom";
+import '../stylesheets/StarRating.css'
 
 class StarRating extends Component {
 
@@ -49,7 +50,7 @@ class StarRating extends Component {
   render () {
     console.log(this.state)
         return(
-            <div>
+            <div className='starRating' id='starRating'>
                   <ReactStars
                     count={5}
                     value={this.state.userRating}
@@ -57,7 +58,7 @@ class StarRating extends Component {
                     size={25}
                     activeColor="#ffd700"
                   />  
-              </div>
+            </div>
           )
         }
 

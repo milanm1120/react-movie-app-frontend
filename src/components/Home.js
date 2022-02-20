@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Search from './Search';
 import Login from './Login';
-import MovieResults from './MovieResults';
+import MovieContainer from './MovieContainer';
 import '../stylesheets/Home.css';
 
 const Home = () => {
@@ -17,7 +17,7 @@ const Home = () => {
                         <Search />
                     </div>
                     <div className='RowContainer'>
-                        <MovieResults />
+                        <MovieContainer />
                     </div>
                 </div>
             }

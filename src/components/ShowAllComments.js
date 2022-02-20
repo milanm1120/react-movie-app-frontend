@@ -35,16 +35,16 @@ export class ShowAllComments extends Component {
             <hr/>
         { this.state.commentAll ? this.state.commentAll.map(item =>{
                   // console.log(item)
-                  return <div key={item.id} style= {{color: 'white'}}>
-                    {item.user.name}
-                    <li key= {item.id}>
-                              
-                              {item.contents}
-                              <br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                              <button onClick = {() => this.removeComment(item.id)}> Delete Comment</button>
+            return <div key={item.id} style= {{color: 'white'}}>
+                    
+            <ol key= {item.id}>
+                <h3>User {item.user.name}:</h3>
+                {item.contents}
+                <br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button onClick = {() => this.removeComment(item.id)}> Delete Comment</button>
                       <br/><br/><hr/>
-                      </ li>
-                  </div>
+            </ol>
+        </div>
                      
             }) : ''} 
             </div>

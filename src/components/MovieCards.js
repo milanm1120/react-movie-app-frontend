@@ -4,7 +4,7 @@ import '../stylesheets/MovieItems.css'
 
 const imageUrlComponent = 'https://image.tmdb.org/t/p/w342';
 
-class MovieItems extends Component {
+class MovieCards extends Component {
 
     constructor(props) {
       super(props);
@@ -101,6 +101,6 @@ class MovieItems extends Component {
   }
 }
 
-export default MovieItems;
+export default MovieCards;
 
 // export default connect(null, {addToFavorite})(MovieItems);

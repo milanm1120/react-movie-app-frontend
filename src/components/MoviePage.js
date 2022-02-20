@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import CreateComment from './CreateComment';
 import '../stylesheets/MovieItems.css'
 
-class MovieItemDetail extends Component {
+class MoviePage extends Component {
 
   componentDidMount() {
     fetch(`http://localhost:3000/api/v1/movies/${this.props.match.params.id}`)
@@ -19,7 +19,6 @@ class MovieItemDetail extends Component {
     console.log(movie);
     return (
       <div id = 'displaymovieitems'>
-              
               {movie ?  
                     <div className='movie-items-container'>
                       <div id= 'movie-items-poster' className= 'movie-items-poster'>
@@ -57,4 +56,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, null)(MovieItemDetail);
+export default connect(mapStateToProps, null)(MoviePage);

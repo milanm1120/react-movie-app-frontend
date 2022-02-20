@@ -18,7 +18,7 @@ import Home from './components/Home';
 import Header from './components/Header';
 import './stylesheets/App.css'
 import StarRating from './components/OldStarRating';
-import MovieItemDetail from './components/MovieItemDetail';
+import MoviePage from './components/MoviePage';
 import CreateComment from './components/CreateComment';
 import FavoritesContainer from './containers/FavoritesContainer';
 import Footer from './components/Footer';
@@ -51,7 +51,7 @@ class App extends Component {
           <Route exact path='/login' component={Login} />
           <Route exact path='/signup' component={SignUpContainer} />
           <Route exact path='/home' component={Home} />
-          <Route exact path='/movie/:id/view' component={MovieItemDetail} />
+          <Route exact path='/movie/:id/view' component={MoviePage} />
           <Route exact path='/movie/:id/comment' component={CreateComment} />
           <Route exact path='/favorites' component={FavoritesContainer} />
           <Footer />
