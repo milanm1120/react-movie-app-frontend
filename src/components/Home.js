@@ -7,7 +7,8 @@ import MovieResults from './MovieResults';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import LogoutNavBar from './LogoutNavBar';
 import SignUp from './SignUp';
-import '../stylesheets/Home.css'
+import '../stylesheets/Home.css';
+// import Header from './Header';
 
 export class Home extends Component {
     render() {
@@ -17,9 +18,10 @@ export class Home extends Component {
                 { !react_token || react_token == 'undefined'? <Login /> :  
 
 
-            
+                    
                 <div className = 'home-container'>
                     <div className= 'SearchContainer'>
+                        
                         <Search />
                     </div>
                     <div className='RowContainer'>

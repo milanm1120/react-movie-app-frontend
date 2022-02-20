@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
+import { Redirect } from 'react-router-dom/cjs/react-router-dom.min'
 import '../stylesheets/Header.css'
 
-class LogoutNavBar extends Component {
+function LogoutNavBar() {
 
-  handleLogout = () => {
+  const handleLogout = () => {
     console.log('header test logout')
     localStorage.removeItem("react_token");
     window.location.reload(false);
     }
 
-    render() {
+    
       const react_token = localStorage.getItem("react_token")
       const react_user_name = localStorage.getItem("react_user_name")
     return (
@@ -25,12 +26,11 @@ class LogoutNavBar extends Component {
                 {/* User: {react_user_name} */}
             </div>
             { react_token && react_token != 'undefined' ?   
-                <button className='logout-btn' onClick={this.handleLogout}>LOGOUT </button>
+                <button className='logout-btn' onClick={handleLogout}>LOGOUT </button>
                 : ''}
         </nav>
       </div>
     )
   }
-}
 
 export default LogoutNavBar;
