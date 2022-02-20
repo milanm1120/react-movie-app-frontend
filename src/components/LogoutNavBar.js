@@ -1,6 +1,3 @@
-import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
-import { Redirect } from 'react-router-dom/cjs/react-router-dom.min'
 import '../stylesheets/Header.css'
 
 function LogoutNavBar() {
@@ -14,13 +11,10 @@ function LogoutNavBar() {
     
       const react_token = localStorage.getItem("react_token")
       const react_user_name = localStorage.getItem("react_user_name")
+      
     return (
       <div className='LogoutNavBar'>
         <nav>
-          {/* <div id='LogoutNavBar-ul'>
-            <NavLink to='/'>HOME</NavLink>
-            <NavLink to='/SignUp'>REGISTER</NavLink>
-            <NavLink to='/Favorite'>FAVORTIES</NavLink> */}
             <br/>
             <div className ='userName'>
                 {/* User: {react_user_name} */}

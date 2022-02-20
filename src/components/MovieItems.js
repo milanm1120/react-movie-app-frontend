@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
-import { addToFavorite } from '../redux/actions';
 import { Link } from 'react-router-dom';
-import { Route } from 'react-router-dom';
-import { connect } from 'react-redux'
 import '../stylesheets/MovieItems.css'
 
 const imageUrlComponent = 'https://image.tmdb.org/t/p/w342';

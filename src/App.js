@@ -21,6 +21,7 @@ import StarRating from './components/OldStarRating';
 import MovieItemDetail from './components/MovieItemDetail';
 import CreateComment from './components/CreateComment';
 import FavoritesContainer from './containers/FavoritesContainer';
+import Footer from './components/Footer';
  
 
 class App extends Component {
@@ -53,6 +54,7 @@ class App extends Component {
           <Route exact path='/movie/:id/view' component={MovieItemDetail} />
           <Route exact path='/movie/:id/comment' component={CreateComment} />
           <Route exact path='/favorites' component={FavoritesContainer} />
+          <Footer />
         </Router>
 
         {/* <StarRating /> */}

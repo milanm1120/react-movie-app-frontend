@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { addToFavorite } from '../redux/actions';
 import { connect } from 'react-redux'
 import CreateComment from './CreateComment';
 import '../stylesheets/MovieItems.css'
