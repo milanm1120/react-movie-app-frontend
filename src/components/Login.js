@@ -9,7 +9,8 @@ class Login extends Component {
     
     state = {
         email: '',
-        password: ''
+        password: '',
+        message: '',
     }
 
     handleChange = (event) => {                             //event is passed as a perameter 

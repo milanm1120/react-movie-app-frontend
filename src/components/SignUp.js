@@ -31,28 +31,17 @@ class SignUp extends Component {
             this.props.signUp(this.state)
         }
     } 
-      
-      signIn = () => {
-        const url = 'http://localhost:3000/api/v1/'
-        const requestOptions = {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json',
-         },
-          body: JSON.stringify({ email: 'milan@gmail.com', password:'abc123!'})
-        };
-        fetch(url + 'sessions', requestOptions)
-          .then(response => response.json())
-          .then(data => console.log("res data: ", data))
-          .catch(er=>console.log(er.message))
-      
-      } 
 
   render() {
     const {  errorMessage } = this.state;
 
-    const { loading, authError, auth, message} = this.props
-    if(auth) {
-      return <Redirect to='/SignIn'/>
+    const { loading, authError, auth} = this.props
+    let {message} = this.props
+    message = message == '' ? null : message
+    console.log(this.props)
+    console.log(this.state)
+    if(message) {
+      return <Redirect to='/login'/>
     }
 
 
@@ -100,9 +89,9 @@ class SignUp extends Component {
   }
 }
 const mapStateToProps = (state) => {
-
+console.log(state)
   return{
-    authError: state.auth.error,
+    authError: state.auth.authError,     
     auth: state.auth.isAuthenticated,
     message: state.auth.message
   }

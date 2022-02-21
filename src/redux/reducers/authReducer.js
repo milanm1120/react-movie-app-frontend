@@ -54,6 +54,7 @@ const initState = {
                 return{
                   ...state,
                   authError: null,
+                  login_success: true,
                   message: "Your Registration is Successful! Please Sign in"
               }
             case 'SIGNUP_ERROR':

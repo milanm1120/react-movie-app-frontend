@@ -11,7 +11,8 @@ class CreateComment extends Component {
   
     state = {
         comment: '',
-        commentAll: [],
+        commentAll: this.props.commentAll,
+        newComments: []
       }
 
     handleChange = (event) => {
@@ -34,14 +35,37 @@ class CreateComment extends Component {
               }),
           method: 'POST',})                         //setting the server to recieve a 'POST' request
       .then(r => r.json())
+      .then(data =>
+        // window.location.reload(false);              //reloads the page using the version of the page cached by the browser
+        this.setState({ commentAll: [...this.state.commentAll, data] })
+      )}
+
+      removeComment(commentID) {
+        console.log(this.state)
+        fetch(`http://localhost:3000/api/v1/comments/${commentID}`, {
+          headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          },
+          body: JSON.stringify({
+              'user_id': localStorage.getItem("react_user_id")
+              }),
+          method: 'DELETE',})
+      .then(r => r.json())
       .then(data => 
         console.log(data))
-        // window.location.reload(false);              //reloads the page using the version of the page cached by the browser
-    }
+        this.setState({
+          commentAll: this.state.commentAll.filter(item => item.id !== commentID)       //unmatched comments are being removed
+        })
+      }
 
     
 
     render() {
+      console.log(this.state.commentAll)
+      console.log(this.state.newComments)
+
+      let refreshedComments = this.state.commentAll
       return(
           <div id = 'displaycomment'>
             <div className = 'comment-container'>
@@ -51,9 +75,9 @@ class CreateComment extends Component {
                 <button id="submitButton" className='comment-submit-btn'>Add Review</button>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <Link to = {'/home'} ><button className='comment-submit-btn'>Back To Movie List</button></Link>
-</form>
+          </form>
             </div>
-            <ShowAllComments commentAll={this.props.commentAll} />
+            <ShowAllComments commentAll={refreshedComments} removeComment={this.removeComment.bind(this)} />
           </div>
         )
     }

@@ -12,7 +12,13 @@ export const signUp = (credentials) => {
             .then(r => r.json())
             .then(data => {
                 console.log("res data: ", data)
-                dispatch({type: 'SIGNUP_SUCCESS'})
+                if (data.error) {
+                    dispatch({type: 'SIGNUP_ERROR', err: data.error.message})
+                }
+                else {
+                    dispatch({type: 'SIGNUP_SUCCESS'})
+                }
+                
                 })
             .catch(error => {
                 console.log(error.message)
