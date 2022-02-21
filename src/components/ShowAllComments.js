@@ -21,7 +21,7 @@ export class ShowAllComments extends Component {
   .then(data => 
     console.log(data))
     this.setState({
-      commentAll: this.state.commentAll.filter(item => item.id !== commentID)
+      commentAll: this.state.commentAll.filter(item => item.id !== commentID)       //unmatched comments are being removed
     })
   }
 
@@ -31,7 +31,6 @@ export class ShowAllComments extends Component {
         <div className ='showallcomments'><br/>
             <hr/>
         { this.state.commentAll ? this.state.commentAll.map(item =>{
-                  // console.log(item)
             return <div key={item.id} style= {{color: 'white'}}>
                     
             <ol key= {item.id}>

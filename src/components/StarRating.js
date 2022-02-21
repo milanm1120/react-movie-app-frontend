@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import { FaStar } from 'react-icons/fa'
-// import '../stylesheets/StarRating.css'
 import ReactStars from "react-rating-stars-component";
-import { render } from "react-dom";
 import '../stylesheets/StarRating.css'
 
 class StarRating extends Component {

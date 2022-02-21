@@ -4,7 +4,6 @@ import '../stylesheets/Header.css'
 
 const Header = () => {
     const react_token = localStorage.getItem("react_token")
-    console.log(react_token)
           
     return (
         <div className = 'displayheader'>

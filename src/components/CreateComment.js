@@ -11,18 +11,16 @@ class CreateComment extends Component {
   
     state = {
         comment: '',
-        commentResult: [],
+        commentAll: [],
       }
 
     handleChange = (event) => {
-      console.log()
       this.setState({
         comment: event.target.value                 //event.target.value will setState to the value entered into the comment form
       })
     }
 
     handleSubmit = (event) => {
-        console.log(this.state.comment)
       event.preventDefault()
       fetch(`http://localhost:3000/api/v1/comments`, {
           headers: {
@@ -38,13 +36,12 @@ class CreateComment extends Component {
       .then(r => r.json())
       .then(data => 
         console.log(data))
-        window.location.reload(false);              //reloads the page using the version of the page cached by the browser
+        // window.location.reload(false);              //reloads the page using the version of the page cached by the browser
     }
 
     
 
     render() {
-      console.log(this.props.commentAll)
       return(
           <div id = 'displaycomment'>
             <div className = 'comment-container'>

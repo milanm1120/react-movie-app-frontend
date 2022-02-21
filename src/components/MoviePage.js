@@ -20,7 +20,6 @@ class MoviePage extends Component {
   render() {
     const react_token = localStorage.getItem("react_token") 
     let movie= this.state ? this.state.movieitemdata : null
-    // console.log(movie);
     return (
       <div id = 'displaymovieitems'>
               { !react_token || react_token == 'undefined'? <Login /> :  
@@ -60,7 +59,6 @@ class MoviePage extends Component {
 }
 
 function mapStateToProps(state) {
-  // console.log(state);
   return{
     movieitemdata: state.movieitemdata,
   }

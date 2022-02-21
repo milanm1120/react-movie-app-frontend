@@ -20,21 +20,18 @@ class Login extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault() 
-        { this.props.loginUser(this.state) }
+        { this.props.loginUser(this.state) }                      //loginUser is the action loginUser.js
         const react_token = localStorage.getItem("react_token")
         console.log(react_token)
         let loginError = react_token == 'undefined' ? true : false
         this.setState({                                     //resets the form 'cleared out' after submitted
              loginError: loginError
             });
-        console.log(this.state);
     } 
 
   render() {
     const react_token = localStorage.getItem("react_token")
-    // console.log(this.state.authError)
-    // console.log(this.state.loginError)
-    // console.log('react_token')
+    
     return (
       <div className='login-container'>
           { react_token && react_token != 'undefined' ? <Redirect to="/home" /> :  

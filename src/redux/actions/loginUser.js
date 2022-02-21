@@ -13,7 +13,7 @@ export const loginUser = (credentials) => {
             .then(r => r.json())
             .then(data => {
                 console.log("res data: ", data)
-                dispatch({type: 'LOGIN_SUCCESS', payload: data})
+                dispatch({type: 'LOGIN_SUCCESS', payload: data})                //dispatch then leads to the authReducer.js
                 })
             .catch(error => {
                 // console.log(error.message)
