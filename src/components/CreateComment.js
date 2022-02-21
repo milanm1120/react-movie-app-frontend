@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { movies } from  '../redux/actions/index.js';
 import { connect } from 'react-redux';
-import { ShowAllComments } from './ShowAllComments'
-import {Link } from 'react-router-dom'
+import ShowAllComments from './ShowAllComments';
+import {Link } from 'react-router-dom';
 import StarRating from './StarRating.js';
-import '../stylesheets/Comment.css'
+import '../stylesheets/Comment.css';
 
 
 class CreateComment extends Component {
@@ -36,7 +36,6 @@ class CreateComment extends Component {
           method: 'POST',})                         //setting the server to recieve a 'POST' request
       .then(r => r.json())
       .then(data =>
-        // window.location.reload(false);              //reloads the page using the version of the page cached by the browser
         this.setState({ commentAll: [...this.state.commentAll, data] })
       )}
 
@@ -74,7 +73,7 @@ class CreateComment extends Component {
             <StarRating movieID={this.props.movieID} /><br/>
                 <button id="submitButton" className='comment-submit-btn'>Add Review</button>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <Link to = {'/home'} ><button className='comment-submit-btn'>Back To Movie List</button></Link>
+            <Link to = {'/home'} ><button className='comment-submit-btn'>Back To Home</button></Link>
           </form>
             </div>
             <ShowAllComments commentAll={refreshedComments} removeComment={this.removeComment.bind(this)} />

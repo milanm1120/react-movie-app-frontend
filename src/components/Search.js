@@ -26,9 +26,8 @@ class Search extends Component {
   search() {
     let url = `http://localhost:3000/api/v1/movies?query=${this.state.search}&user_id=${localStorage.getItem('react_user_id')}`
     fetch(url)
-    .then(r => r.json())
+    .then(r => r.json())          //parsing out the response
     .then(jsonObj => {
-      console.log(jsonObj)
       this.props.movies(jsonObj);
   
     });

@@ -2,6 +2,7 @@ import '../stylesheets/Header.css'
 
 const LogoutNavBar = () => {
 
+
   const handleLogout = () => {
     console.log('header test logout')
     localStorage.removeItem("react_token");

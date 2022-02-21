@@ -52,11 +52,11 @@ class SignUp extends Component {
             <h3>SIGN UP</h3>
               <form onSubmit={(event) => this.handleSubmit(event)}>
                   <label>Name: </label>
-                  <input type="text" placeholder="Name" name="name" value={this.state.name} onChange={(event) => this.handleChange(event)}/><br/>
+                  <input type="text" placeholder="James Smith" name="name" value={this.state.name} onChange={(event) => this.handleChange(event)}/><br/>
                   <label>Email :</label>
-                  <input type="email" placeholder="Email" name="email" value={this.state.email} onChange={(event) => this.handleChange(event)} /><br/>
+                  <input type="email" placeholder="example@abc.com" name="email" value={this.state.email} onChange={(event) => this.handleChange(event)} /><br/>
                   <label>Password: </label>
-                  <input type="password" placeholder="Password" name="password" value={this.state.password} onChange={(event) => this.handleChange(event)}/><br/>
+                  <input type="password" placeholder="min. 6 characters" name="password" value={this.state.password} onChange={(event) => this.handleChange(event)}/><br/>
                   
                   <p
                       style={{

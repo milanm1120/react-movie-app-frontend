@@ -10,7 +10,7 @@ const Footer = () => {
             <small>&copy; 2022 - <strong>Everyone's A Critic. </strong> - All Rights Reserved. - <strong>FlatIron SE Program</strong> - Milan Mody</small>
             
         </footer>
-        </>
+      </>
   )
 }
 

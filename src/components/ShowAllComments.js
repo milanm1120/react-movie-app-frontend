@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import '../stylesheets/ShowAllComments.css'
 
-export class ShowAllComments extends Component {
+class ShowAllComments extends Component {
 
     state = {
       commentAll: this.props.commentAll
@@ -23,9 +23,9 @@ export class ShowAllComments extends Component {
             <ol key= {item.id}>
                 <h3>User {item.user.name}:</h3>
                 {item.contents}
-                <br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <br/><br/>
                 {item.user.id == localStorage.getItem("react_user_id") ?  
-                <button onClick = {() => this.props.removeComment(item.id)}> Delete Comment</button> : '' }
+                <button className='delete-btn' onClick = {() => this.props.removeComment(item.id)}> Delete Comment</button> : '' }
                       <br/><br/><hr/>
             </ol>
         </div>
