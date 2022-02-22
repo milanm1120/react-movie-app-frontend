@@ -6,7 +6,6 @@ const LogoutNavBar = () => {
   const handleLogout = () => {
     // console.log('header test logout')
     localStorage.removeItem("react_token");
-    window.location.reload(false);
   }
 
     
