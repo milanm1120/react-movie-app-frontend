@@ -1,4 +1,4 @@
-import { MOVIES } from  '../actions/index.js';
+import { MOVIES } from  '../actions/movieActions';
 
 function movies(state= [], action){              //taking in the previous state and a defined action object
     switch(action.type){                                //inside the reducer we are updating the reduce based upon the action.

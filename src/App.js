@@ -1,5 +1,5 @@
 import React, { Component } from 'react' ;
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Login from './components/Login';
 import SignUpContainer from './containers/SignUpContainer';
 import Home from './components/Home';
@@ -20,7 +20,7 @@ class App extends Component {
           <div className='text-center'>
           < style>{'body { background-color: black; }'}</style>
          
-        <Router>
+        <Route>
           <Header />
             <Route exact path='/' component={Login} />
             <Route exact path='/login' component={Login} />
@@ -29,7 +29,7 @@ class App extends Component {
             <Route exact path='/movie/:id/view' component={MoviePage} />
             {/* <Route exact path='/movie/:id/comment' component={CreateComment} /> */}
           <Footer />
-        </Router>
+        </Route>
 
 
         </div>

@@ -17,7 +17,7 @@ ReactDOM.render(
   //any child component wrapped inside of provider will have access to the Redux store. Store is passed as a 'prop' into the Provider component
   <Provider store={store}>   
     <Router>
-        <App />
+      <App />
     </Router>
   </Provider>,
   document.getElementById('root')

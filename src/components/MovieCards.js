@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux'
+import { movies } from  '../redux/actions/movieActions.js';
 import '../stylesheets/MovieItems.css'
 
 class MovieCards extends Component {
@@ -22,7 +24,7 @@ class MovieCards extends Component {
                   }),
               method: 'POST',})
           .then(r => r.json())
-          .then(data => 
+          .then(fav_ids => 
             // console.log(data))
             this.setState({ fav_ids: [...this.state.fav_ids, movieID] }))          //adds movie to favorite array, changes state and triggers a re-render
     }
@@ -76,7 +78,7 @@ class MovieCards extends Component {
               <h3>{title}</h3>
               <p>{description}</p>
               <p><strong>Release Date: </strong>{release_date}</p>
-              <p><strong>Online Ratings: </strong>{online_rating}</p>
+              <p><strong>Online Ratings: </strong>{online_rating}/10 on TBDB.org</p>
               <button className={btn_class_name}  onClick = {() => this.addToFavorite(id, is_fav)}>{fav_string}</button>
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <Link to = {`/movie/${id}/view`} ><button className='option-submit-btn'>Leave A Review</button></Link>
@@ -88,4 +90,17 @@ class MovieCards extends Component {
   }
 }
 
-export default MovieCards;
+function mapStateToProps(stateFromStore){
+  return{
+    movieitemdata: stateFromStore.movieitemdata        //.movieitemdata is the coming from the initial state coming from the store
+  }
+}
+
+
+function mapDispatchToProps(dispatch){            //mapDispatchToProps gets our data into Redux
+  return{                                         //returning an object that is merged with our props
+    dispatchMovies: (movie) => dispatch(movies(movie))              //movies is a set function written in redux/action/movieActions.js
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MovieCards);

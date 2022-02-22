@@ -21,7 +21,7 @@ class Login extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault() 
-        { this.props.loginUser(this.state) }                      //loginUser is the action loginUser.js
+        { this.props.loginUser(this.state) }                      //loginUser is the action loginUser.js, this is a callback function
         const react_token = localStorage.getItem("react_token")
         // console.log(react_token)
         let loginError = react_token == 'undefined' ? true : false
@@ -45,10 +45,32 @@ class Login extends Component {
               <br/>
               <form onSubmit={(event) => this.handleSubmit(event)} >
                   <label>Email: </label>
-                  <input type='email' name='email' className='login-field' placeholder='example@abc.com' value={this.state.email} size="25" onChange={(event) => this.handleChange(event)} required /><br/>
+                  <input 
+                    type='email' 
+                    name='email' 
+                    className='login-field' 
+                    placeholder='example@abc.com' 
+                    value={this.state.email} 
+                    size="25" 
+                    onChange={(event) => this.handleChange(event)} required 
+                  />
+                  <br/>
                   <label>Password: </label>
-                  <input type='password' name='password' className='login-field' placeholder='min. 6 characters' value={this.state.password} onChange={(event) => this.handleChange(event)} required /><br/><br/>
-                  <input type='submit' value='login' id='login-btn' className="btn btn-success" />
+                  <input 
+                    type='password' 
+                    name='password' 
+                    className='login-field' 
+                    placeholder='min. 6 characters' 
+                    value={this.state.password} 
+                    onChange={(event) => this.handleChange(event)} required 
+                  />
+                  <br/><br/>
+                  <input 
+                    type='submit' 
+                    value='login' 
+                    id='login-btn' 
+                    className="btn btn-success" 
+                  />
                   <p>Don't have an account? <Link to='/signup'>Sign Up Here!</Link></p>
               </form>
           </div>

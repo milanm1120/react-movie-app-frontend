@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { movies } from  '../redux/actions/index.js';
+import { movies } from  '../redux/actions/movieActions.js';
 import { connect } from 'react-redux';
 import ShowAllComments from './ShowAllComments';
 import {Link } from 'react-router-dom';

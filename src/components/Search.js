@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { movies } from  '../redux/actions/index.js';
+import { movies } from  '../redux/actions/movieActions';
 import { connect } from 'react-redux';
 import '../stylesheets/Search.css'
-
 
 class Search extends Component {
   
@@ -37,8 +36,13 @@ class Search extends Component {
     return(
         <div id = 'displaysearch'>
           <div className = 'search-container'>
-            <form onSubmit={(event) => this.handleSubmit(event)}>
-              <input type="text" id="search-field" className="seach-field" placeholder="Search for a movie" onChange={(event) =>this.handleChange(event)} />
+            <form onSubmit={(event) => this.handleSubmit(event)}>         {/* onSubmit also captures if a user presses 'enter' on a keyboard to submit a form as well as clicking a submit button, we would use onClick on the submit button, but an enter by the user would not be caputred.  */}
+              <input 
+                type="text" id="search-field" 
+                className="seach-field" 
+                placeholder="Search for a movie" 
+                onChange={(event) =>this.handleChange(event)} 
+              />
               <button id="submitButton" className='search-submit-btn'>Search</button><br/>
               <p>Click Search To See All Available Movies In Our DataBase</p>
             </form>
