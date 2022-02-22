@@ -2,7 +2,7 @@ export const loginUser = (credentials) => {
 
     const url = ('http://localhost:3000/api/v1/sessions')
     const {name, email, password} = credentials     //destructuring name, email, password out of credentials
-    console.log("123")
+    // console.log("123")
     return(dispatch)=>{
         const requestOptions = {
             method: 'POST',
@@ -12,7 +12,7 @@ export const loginUser = (credentials) => {
         fetch(url, requestOptions)
             .then(r => r.json())
             .then(data => {
-                console.log("res data: ", data)
+                // console.log("res data: ", data)
                 dispatch({type: 'LOGIN_SUCCESS', payload: data})                //dispatch then leads to the authReducer.js
                 })
             .catch(error => {

@@ -11,7 +11,7 @@ class ShowAllComments extends Component {
 
 
   render() {
-    console.log(this.state.commentAll)
+    // console.log(this.state.commentAll)
     let refreshedComments = this.props.commentAll
     // refreshedComments = refreshedComments.filter((item, index) => refreshedComments.indexOf(item) === index);
     return (

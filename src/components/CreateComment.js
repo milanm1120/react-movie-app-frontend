@@ -36,11 +36,12 @@ class CreateComment extends Component {
           method: 'POST',})                         //setting the server to recieve a 'POST' request
       .then(r => r.json())
       .then(data =>
+        
         this.setState({ commentAll: [...this.state.commentAll, data] })
       )}
-
+      
       removeComment(commentID) {
-        console.log(this.state)
+        // console.log(this.state)
         fetch(`http://localhost:3000/api/v1/comments/${commentID}`, {
           headers: {
           'Content-Type': 'application/json',
@@ -51,18 +52,19 @@ class CreateComment extends Component {
               }),
           method: 'DELETE',})
       .then(r => r.json())
-      .then(data => 
-        console.log(data))
+      .then(data => data)
+        // console.log(data)
+        
         this.setState({
           commentAll: this.state.commentAll.filter(item => item.id !== commentID)       //unmatched comments are being removed
-        })
+      })
       }
 
     
 
     render() {
-      console.log(this.state.commentAll)
-      console.log(this.state.newComments)
+      // console.log(this.state.commentAll)
+      // console.log(this.state.newComments)
 
       let refreshedComments = this.state.commentAll
       return(

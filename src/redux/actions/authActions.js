@@ -11,7 +11,7 @@ export const signUp = (credentials) => {
         fetch(url + 'registration', requestOptions)
             .then(r => r.json())
             .then(data => {
-                console.log("res data: ", data)
+                // console.log("res data: ", data)
                 if (data.error) {
                     dispatch({type: 'SIGNUP_ERROR', err: data.error.message})
                 }
@@ -21,7 +21,7 @@ export const signUp = (credentials) => {
                 
                 })
             .catch(error => {
-                console.log(error.message)
+                // console.log(error.message)
                 dispatch({type: 'SIGNUP_ERROR', err: error.message})
             })
     } 

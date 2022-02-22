@@ -9,7 +9,7 @@ class StarRating extends Component {
   }
 
  ratingChanged = (newRating) => {
-    console.log(newRating);
+    // console.log(newRating);
     fetch(`http://localhost:3000/api/v1/ratings`, {
         headers: {
         'Content-Type': 'application/json',
@@ -43,8 +43,8 @@ class StarRating extends Component {
 
   render () {
     let userRating = this.state.userRating
-    console.log(this.state.userRating)
-    console.log(typeof(this.state.userRating))
+    // console.log(this.state.userRating)
+    // console.log(typeof(this.state.userRating))
         return(
             <div className='starRating' id='starRating'>
                   <ReactStars
@@ -59,4 +59,4 @@ class StarRating extends Component {
         }
 
 }
-export default StarRating
+export default StarRating;

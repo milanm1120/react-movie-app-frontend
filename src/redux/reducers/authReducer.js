@@ -17,7 +17,7 @@ const initState = {
         }
   
         case 'LOGIN_SUCCESS':
-          console.log("Login Success: ", action.payload.token)   //passing the token data to the action
+          // console.log("Login Success: ", action.payload.token)   //passing the token data to the action
           localStorage.setItem('react_token', JSON.stringify(action.payload.token));    //storing the token in local storage
           localStorage.setItem('react_user_id', JSON.stringify(action.payload.user.id));
           localStorage.setItem('react_user_name', action.payload.user.name);
@@ -30,7 +30,7 @@ const initState = {
         }
   
       case 'LOGIN_ERROR':
-        console.log('login fail')
+        // console.log('login fail')
         return{
           ...state,
           authentication: false,

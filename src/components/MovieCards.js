@@ -9,7 +9,7 @@ class MovieCards extends Component {
         };
 
   addToFavorite(movieID, is_fav){                                 // can we send the Favorite and Comment buttons to a seperate container?
-    console.log(is_fav)
+    // console.log(is_fav)
     if (!is_fav){
           fetch(`http://localhost:3000/api/v1/favorites`, {
               headers: {
@@ -23,12 +23,13 @@ class MovieCards extends Component {
               method: 'POST',})
           .then(r => r.json())
           .then(data => 
-            console.log(data))
-            this.setState({ fav_ids: [...this.state.fav_ids, movieID] })          //adds movie to favorite array, changes state and triggers a re-render
+            // console.log(data))
+            this.setState({ fav_ids: [...this.state.fav_ids, movieID] }))          //adds movie to favorite array, changes state and triggers a re-render
     }
     else (
       this.removeFavorite(movieID)
     )
+    
   }
 
   removeFavorite(movieID) {
@@ -43,8 +44,8 @@ class MovieCards extends Component {
           }),
       method: 'DELETE',})
   .then(r => r.json())
-  .then(data => 
-    console.log(data))
+  .then(data => data)
+    // console.log(data))
     this.setState({
       fav_ids: this.state.fav_ids.filter(item => item != movieID)           //removing the unfavorited movieID. 
     })
@@ -56,7 +57,7 @@ class MovieCards extends Component {
     const fav_string = this.state.fav_ids.includes(this.props.movie.id) ? 'Remove Favorite' : 'Add To Favorite'
     const is_fav = this.state.fav_ids.includes(this.props.movie.id) ? true : false
     const btn_class_name = this.state.fav_ids.includes(this.props.movie.id) ? 'option-submit-btn' : 'option-green-btn'
-    console.log(this.state.fav_ids)
+    // console.log(this.state.fav_ids)
     return (
       <div id = 'displaymovieitems'>
        

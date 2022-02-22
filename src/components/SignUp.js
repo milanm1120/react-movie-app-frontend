@@ -38,8 +38,8 @@ class SignUp extends Component {
     const { loading, authError, auth} = this.props
     let {message} = this.props
     message = message == '' ? null : message
-    console.log(this.props)
-    console.log(this.state)
+    // console.log(this.props)
+    // console.log(this.state)
     if(message) {
       return <Redirect to='/login'/>
     }
@@ -89,7 +89,6 @@ class SignUp extends Component {
   }
 }
 const mapStateToProps = (state) => {
-console.log(state)
   return{
     authError: state.auth.authError,     
     auth: state.auth.isAuthenticated,

@@ -12,7 +12,7 @@ class Search extends Component {
     }
 
   handleChange = (event) => {
-    console.log()
+    // console.log()
     this.setState({
       search: event.target.value                    //event.target.value will setState to the value entered into the serach form
     })

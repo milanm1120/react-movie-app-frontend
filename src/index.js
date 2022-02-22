@@ -14,10 +14,10 @@ const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(rootReducer, composeEnhancer(applyMiddleware(thunk)))     //store = global storage of data, reducers is responsible for taking in an 'action' object and deciding what we want to update in our store and then the reducer returns the new store
 
 ReactDOM.render(
-  //any child component wrapped inside of provider will have access to the Redux store
+  //any child component wrapped inside of provider will have access to the Redux store. Store is passed as a 'prop' into the Provider component
   <Provider store={store}>   
     <Router>
-      <App />
+        <App />
     </Router>
   </Provider>,
   document.getElementById('root')

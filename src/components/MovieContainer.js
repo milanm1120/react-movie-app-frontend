@@ -4,7 +4,7 @@ import MovieCards from './MovieCards';
 
 class MovieContainer extends Component {
     render() {
-        console.log(this.props)
+        // console.log(this.props)
         return (
             <div>
                 {this.props.movie.movie_all && this.props.movie.movie_all.map(item =>{
@@ -16,7 +16,7 @@ class MovieContainer extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log(state);
+    // console.log(state);
     return{
         movie:state.movie,
     }

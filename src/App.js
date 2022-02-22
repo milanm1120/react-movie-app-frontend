@@ -5,7 +5,7 @@ import SignUpContainer from './containers/SignUpContainer';
 import Home from './components/Home';
 import Header from './components/Header';
 import MoviePage from './components/MoviePage';
-import CreateComment from './components/CreateComment';
+// import CreateComment from './components/CreateComment';
 import Footer from './components/Footer';
 import './stylesheets/App.css'
  
